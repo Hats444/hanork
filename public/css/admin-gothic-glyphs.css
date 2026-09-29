@@ -1,0 +1,252 @@
+/* Necropolis — ornamentos góticos (SVG sprite) */
+
+.gothic-veil {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.gothic-veil .gv {
+  position: absolute;
+  width: clamp(72px, 11vw, 140px);
+  height: clamp(72px, 11vw, 140px);
+  opacity: 0.055;
+  filter: drop-shadow(0 0 24px rgba(124, 34, 206, 0.15));
+  animation: gv-drift 28s ease-in-out infinite;
+}
+
+.gothic-veil .gv-skull-tr { top: 6%; right: 4%; animation-delay: 0s; }
+.gothic-veil .gv-blades-bl { bottom: 14%; left: 3%; animation-delay: -6s; width: clamp(80px, 12vw, 150px); height: clamp(80px, 12vw, 150px); }
+.gothic-veil .gv-chain-br { bottom: 8%; right: 6%; animation-delay: -12s; opacity: 0.04; }
+.gothic-veil .gv-crown-tl { top: 18%; left: 2%; animation-delay: -4s; opacity: 0.045; }
+.gothic-veil .gv-moon-mr { top: 42%; right: 1%; animation-delay: -18s; width: clamp(56px, 8vw, 100px); height: clamp(56px, 8vw, 100px); opacity: 0.04; }
+.gothic-veil .gv-wings-ml { top: 55%; left: 1%; animation-delay: -9s; opacity: 0.035; }
+.gothic-veil .gv-chalice-tc { top: 3%; left: 42%; animation-delay: -14s; width: clamp(48px, 7vw, 88px); height: clamp(48px, 7vw, 88px); opacity: 0.035; }
+
+@keyframes gv-drift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(6px, -8px) rotate(2deg); }
+  66% { transform: translate(-4px, 6px) rotate(-1.5deg); }
+}
+
+.sb-glyphs {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 10px 12px 0;
+  flex-shrink: 0;
+  opacity: 0.35;
+}
+
+.sb-glyphs svg {
+  width: 22px;
+  height: 22px;
+  color: #b8954a;
+}
+
+.sb-logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sb-logo-mark svg.logo-glyph {
+  width: 26px;
+  height: 26px;
+  color: #a855f7;
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.45));
+  flex-shrink: 0;
+}
+
+.sb-logo-mark h1 {
+  margin: 0;
+}
+
+.gtitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gtitle .gt-glyph {
+  width: 18px;
+  height: 18px;
+  color: var(--gold);
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+.gtitle .gt-glyph-end {
+  margin-left: auto;
+  opacity: 0.25;
+  width: 14px;
+  height: 14px;
+  color: var(--purple3);
+}
+
+.card-gothic,
+.kc {
+  position: relative;
+}
+
+.card-gothic::after,
+.kc::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  opacity: 0.07;
+  pointer-events: none;
+  background: url('/assets/necropolis-glyphs.svg') no-repeat;
+  /* fallback invisible — real corners via .card-corner spans */
+}
+
+.card-corners {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.card-corners svg {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  color: var(--gold);
+  opacity: 0.22;
+}
+
+.card-corners .cc-tl { top: 6px; left: 6px; }
+.card-corners .cc-br { bottom: 6px; right: 6px; transform: rotate(180deg); }
+
+.pc-thumb-glyph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(124, 34, 206, 0.18), transparent 65%),
+    linear-gradient(180deg, rgba(12, 4, 22, 0.95), rgba(2, 0, 4, 0.98));
+  position: relative;
+  overflow: hidden;
+}
+
+.pc-thumb-glyph::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    rgba(147, 51, 234, 0.04) 8px,
+    rgba(147, 51, 234, 0.04) 9px
+  );
+  pointer-events: none;
+}
+
+.pc-thumb-glyph svg {
+  width: 52%;
+  height: 52%;
+  color: #c4b5fd;
+  filter: drop-shadow(0 0 16px rgba(168, 85, 247, 0.35));
+  position: relative;
+  z-index: 1;
+  animation: glyph-pulse 4s ease-in-out infinite;
+}
+
+@keyframes glyph-pulse {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+.pc-thumb-glyph.glyph-skull svg { color: #d8b4fe; }
+.pc-thumb-glyph.glyph-blades svg { color: #e9d5ff; }
+.pc-thumb-glyph.glyph-chain svg { color: #a78bfa; }
+.pc-thumb-glyph.glyph-crown svg { color: #b8954a; }
+.pc-thumb-glyph.glyph-rose svg { color: #c084fc; }
+.pc-thumb-glyph.glyph-moon svg { color: #ddd6fe; }
+.pc-thumb-glyph.glyph-chalice svg { color: #b794f6; }
+.pc-thumb-glyph.glyph-wings svg { color: #a855f7; }
+
+.modal-panel .modal-glyph {
+  position: absolute;
+  top: 12px;
+  right: 48px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.2;
+  color: var(--purple3);
+  pointer-events: none;
+}
+
+#loading .load-glyph {
+  width: 48px;
+  height: 48px;
+  color: #a855f7;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.5));
+  animation: glyph-pulse 2s ease-in-out infinite;
+}
+
+#loading:has(.load-glyph)::before {
+  display: none;
+}
+
+.login-glyphs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 18px;
+  opacity: 0.45;
+}
+
+.login-glyphs svg {
+  width: 28px;
+  height: 28px;
+  color: #9333ea;
+}
+
+.login-card .login-corner {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  opacity: 0.2;
+  color: #b8954a;
+  pointer-events: none;
+}
+
+.login-card .login-corner-tl { top: 10px; left: 10px; }
+.login-card .login-corner-br { bottom: 10px; right: 10px; transform: rotate(180deg); }
+
+.app-footer .footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.app-footer .footer-glyph {
+  width: 16px;
+  height: 16px;
+  color: var(--gold);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .gothic-veil .gv { opacity: 0.03; }
+  .sb-glyphs { gap: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gothic-veil .gv,
+  .pc-thumb-glyph svg,
+  #loading .load-glyph {
+    animation: none;
+  }
+}

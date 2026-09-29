@@ -1,0 +1,32 @@
+{
+  "name": "zero-divu",
+  "version": "1.7.2",
+  "description": "Zero Divu — divulgação inteligente em grupos WhatsApp com classificação automática",
+  "main": "connect.js",
+  "scripts": {
+    "start": "bash start.sh",
+    "bot": "node connect.js",
+    "stop": "node scripts/stop-bot.js",
+    "pair": "node connect.js --code",
+    "menu": "bash start.sh",
+    "postinstall": "node scripts/patch-baileys-newsletter.js",
+    "patch:baileys": "node scripts/patch-baileys-newsletter.js",
+    "verify": "node scripts/verify-spec.js",
+    "db:clean": "node scripts/db-clean.js",
+    "start:posix": "sh start-posix.sh",
+    "pm2": "pm2 start ecosystem.config.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.9.0",
+    "@hapi/boom": "^10.0.1",
+    "@kurtucoben/baileys": "^0.2.7",
+    "colors": "^1.4.0",
+    "figlet": "^1.11.0",
+    "fs-extra": "^11.2.0",
+    "linkifyjs": "^4.1.3",
+    "node-cache": "^5.1.2",
+    "pino": "^8.17.2",
+    "qrcode": "^1.5.4",
+    "qrcode-terminal": "^0.12.0"
+  }
+}

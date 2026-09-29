@@ -1,0 +1,47 @@
+name: Build Hanork Panel APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+    paths:
+      - 'hanork_panel/**'
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: hanork_panel
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Flutter pub get
+        run: flutter pub get
+
+      - name: Ensure Android platform
+        run: |
+          if [ ! -d android ]; then
+            flutter create . --org com.hanork --project-name hanork_panel --platforms=android
+          fi
+
+      - name: Build release APK
+        run: flutter build apk --release
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hanork-panel-apk
+          path: hanork_panel/build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 90

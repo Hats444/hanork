@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hanork · Necropolis</title>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23020104' d='M0 0h32v32H0z'/%3E%3Cpath fill='none' stroke='%23a855f7' stroke-width='1.2' d='M16 6c-4 0-7 3-7 7 0 2.5 1 4.5 2 5.5l-.5 4 2.5-1 1.5 4 1.5-1.5h3l1.5 1.5 1.5-4 2.5 1-.5-4c1-1 2-3 2-5.5 0-4-3-7-7-7z'/%3E%3Cellipse cx='13' cy='12' rx='1.5' ry='2' fill='%230a0612' stroke='%239333ea'/%3E%3Cellipse cx='19' cy='12' rx='1.5' ry='2' fill='%230a0612' stroke='%239333ea'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/css/admin-nebula.css?v=16" />
+  <link rel="stylesheet" href="/css/admin-gothic-glyphs.css?v=1" />
+</head>
+
+<body>
+  <div class="app-bg" aria-hidden="true"></div>
+
+  <div class="gothic-veil" aria-hidden="true">
+    <svg class="gv gv-skull-tr" viewBox="0 0 64 64"><use href="/assets/necropolis-glyphs.svg#glyph-skull"/></svg>
+    <svg class="gv gv-blades-bl" viewBox="0 0 64 64"><use href="/assets/necropolis-glyphs.svg#glyph-blades"/></svg>
+    <svg class="gv gv-chain-br" viewBox="0 0 64 64"><use href="/assets/necropolis-glyphs.svg#glyph-chain"/></svg>
+    <svg class="gv gv-crown-tl" viewBox="0 0 64 64"><use href="/assets/necropolis-glyphs.svg#glyph-crown"/></svg>
+    <svg class="gv gv-moon-mr" viewBox="0 0 64 64"><use href="/assets/necropolis-glyphs.svg#glyph-moon"/></svg>
+    <svg class="gv gv-wings-ml" viewBox="0 0 64 64"><use href="/assets/necropolis-glyphs.svg#glyph-wings"/></svg>
+    <svg class="gv gv-chalice-tc" viewBox="0 0 64 64"><use href="/assets/necropolis-glyphs.svg#glyph-chalice"/></svg>
+  </div>
+
+  <div id="loading">
+    <svg class="load-glyph" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/necropolis-glyphs.svg#glyph-skull"/></svg>
+    <div class="spin"></div>
+    <div class="load-t">Carregando painel…</div>
+  </div>
+  <div id="toast"></div>
+
+  <div class="layout">
+    <div id="creatures-site" aria-hidden="true">
+      <canvas id="centipede-canvas"></canvas>
+      <canvas id="centipede-dragon-canvas" class="mutant-canvas"></canvas>
+      <canvas id="dragon-centipede-legs" class="mutant-legs-canvas"></canvas>
+      <div id="dragon-layer">
+        <svg id="dragon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+            <g id="Cabeza" transform="matrix(1, 0, 0, 1, 0, 0)">
+              <path style="fill:#FFFFFF;fill-opacity:1" d="M-28.9,-1.1L-28.55 -1.95Q-28.1 -3.1 -27.25 -2.95L-26.7 -2.95Q-27.7 -1.65 -28.9 -1.1M-18.35,-1.8Q-15.1 -10.3 -9.6 -6.05Q-15.1 -6.2 -18.35 -1.8M-18.35,1.1Q-15.1 5.45 -9.6 5.35Q-15.1 9.55 -18.35 1.1M-26.7,2.2L-27.25 2.25Q-28.1 2.4 -28.55 1.2L-28.9 0.35Q-27.7 0.9 -26.7 2.2" />
+              <path style="fill:#000000;fill-opacity:1" d="M-21.05,-8.25Q-13.6 -15.95 -1.3 -12.1Q-7.85 -8.5 -5.85 -4.35Q-2.3 -4.85 10.5 0.15Q0 4.35 -5.85 3.65Q-7.85 7.75 -1.25 12.45Q-13.6 15.2 -21.05 7.5Q-29.55 4.05 -30.2 -0.35Q-29.55 -4.8 -21.05 -8.25M-26.7,-2.95L-27.25 -2.95Q-28.1 -3.1 -28.55 -1.95L-28.9 -1.1Q-27.7 -1.65 -26.7 -2.95M-9.6,-6.05Q-15.1 -10.3 -18.35 -1.8Q-15.1 -6.2 -9.6 -6.05M-9.6,5.35Q-15.1 5.45 -18.35 1.1Q-15.1 9.55 -9.6 5.35M-28.9,0.35L-28.55 1.2Q-28.1 2.4 -27.25 2.25L-26.7 2.2Q-27.7 0.9 -28.9 0.35" />
+            </g>
+            <g id="Aletas" transform="matrix(1, 0, 0, 1, 0, 0)">
+              <linearGradient id="LinearGradID_1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.0935974, 0, 0, 0.188782, -20.55, 0)" spreadMethod="pad" x1="-819.2" y1="0" x2="819.2" y2="0">
+                <stop offset="0" style="stop-color:#CCCCCC;stop-opacity:1" />
+                <stop offset="1" style="stop-color:#000000;stop-opacity:1" />
+              </linearGradient>
+              <path style="fill:url(#LinearGradID_1) " d="M29.75,-36.85Q-17.75 -61.45 -42.05 -40.95L-45.35 -38.35L-53.7 -41.15L-51.15 -44.85Q-34.85 -68.4 21 -57.8Q-32.2 -72.1 -50.25 -50Q-53.85 -45.65 -56.05 -41.95L-64.7 -43.35L-60.6 -50.3Q-45.9 -75.55 5.1 -79.35Q-2.2 -79.8 -9.45 -79.15Q-16.2 -78.55 -22.85 -77.15Q-29.85 -75.65 -36.5 -73Q-43.05 -70.4 -48.8 -66.85Q-54.55 -63.35 -56.8 -60.3L-60.5 -55.4Q-62.95 -52.1 -67 -43.55L-70.55 -43.55L-76.35 -42.95Q-74.6 -49.1 -71.85 -54.85Q-68.9 -61.25 -64.8 -67.1Q-60.8 -73 -55.45 -77.55Q-49.9 -82.35 -43.65 -85.85L-30.6 -92.7Q-24.05 -95.95 -17 -98.25Q-63.75 -86.35 -73.65 -57.1Q-75.75 -50.75 -77.45 -42.75Q-82.9 -41.75 -88 -39.65Q-87.65 -46.65 -86.3 -53.05Q-79.8 -89.8 -36.65 -117.2Q-80.65 -94.5 -87.55 -59.55Q-88.65 -54.15 -88.95 -39.4L-89.8 -38.85L-92.7 -37.6Q-93.75 -44.35 -94.1 -51.15Q-94.4 -58.2 -93.25 -65.1Q-92.15 -72.5 -90.05 -79.65Q-88.05 -86.55 -85 -93Q-82.1 -99.3 -78.45 -105.15Q-74.6 -111.35 -70.25 -117.25Q-65.95 -123.1 -61.1 -128.55Q-70.3 -119.35 -77.9 -108.7Q-86 -97.3 -90.8 -84.05Q-95.8 -70.5 -96 -56.15Q-96.1 -46 -94.05 -36.05L-93.25 -31.55Q-93.5 -35.65 -92.35 -36Q-79.85 -42 -66.6 -40.45Q-52.45 -38.85 -39.2 -33.25Q-28.3 -29.9 -21.25 -24.15Q-17.8 -23.3 -8.6 -15.6Q-12.1 -20.75 -16.75 -24.5Q-24.55 -30.7 -34.25 -34.05L-42.55 -37Q-38.9 -41.25 -31.5 -43.25Q-24.05 -45.3 -16.2 -46.3Q-8.35 -47.35 -1 -46Q5.95 -44.75 12.75 -42.85Q19.85 -40.9 29.75 -36.85M-92.45,-27.35L-94.95 -36.25Q-109.7 -105 -27.95 -154.65Q-98.65 -103.8 -91.75 -39.4L-89.95 -40.2Q-92.2 -105.25 -5.6 -130.9Q-78.8 -99.95 -87.45 -40.9Q-83.15 -42.95 -78.45 -43.95Q-70 -101.3 17.65 -103.8Q-56.9 -93.4 -74.5 -44.55L-67.4 -45.45Q-49.1 -94.95 39.25 -75.65Q-36.75 -84.35 -62.25 -44.25L-57.3 -43.6Q-31.65 -86.5 56.15 -46.05Q-20.3 -73.35 -51.35 -41.7L-45.95 -39.75Q-17.85 -71.35 51.85 -24.8Q-8.7 -56.4 -39.75 -37.05Q-28.15 -34.05 -14.25 -24.45Q-8.6 -19.85 -5.8 -16.95Q5.95 -2.4 20 0Q5.95 2.4 -5.8 16.95Q-8.6 19.85 -14.25 24.45Q-28.15 34.05 -39.75 37.05Q-8.7 56.4 51.85 24.8Q-17.85 71.35 -45.95 39.75L-51.35 41.7Q-20.3 73.35 56.15 46.1Q-31.65 86.5 -57.3 43.65L-62.25 44.3Q-36.75 84.35 39.25 75.7Q-49.1 94.95 -67.4 45.5L-74.5 44.6Q-56.9 93.4 17.65 103.85Q-70 101.3 -78.45 43.95Q-83.15 42.95 -87.45 40.9Q-78.8 99.95 -5.6 130.9Q-92.2 105.25 -89.95 40.25L-91.75 39.4Q-98.65 103.8 -27.95 154.65Q-109.7 105 -94.95 36.3L-92.45 27.35Q-93.05 33.9 -92.05 34.75Q-91.1 35.55 -88.95 36.7L-87.95 37Q-83.7 38.25 -79.05 38.8L-77.25 38.95Q-72.55 39.3 -67.5 38.85L-65.45 38.65Q-44.4 36.05 -17.8 19.6Q-9.9 12.8 -15.15 4.4Q-18.15 3.15 -19 0Q-18.15 -3.15 -15.15 -4.4Q-9.9 -12.8 -17.8 -19.6L-17.8 -19.55Q-44.4 -36.05 -65.45 -38.6L-67.5 -38.8Q-72.55 -39.3 -77.25 -38.95L-79.05 -38.75Q-83.7 -38.25 -87.95 -36.95L-88.95 -36.65Q-91.1 -35.55 -92.05 -34.7Q-93.05 -33.9 -92.45 -27.35M-8.6,15.6Q-17.8 23.3 -21.25 24.2Q-28.3 29.9 -39.2 33.3Q-52.45 38.85 -66.6 40.5Q-79.85 42 -92.35 36Q-93.5 35.65 -93.25 31.55L-94.05 36.1Q-96.1 46.05 -96 56.15Q-95.8 70.5 -90.8 84.1Q-86 97.3 -77.9 108.75Q-70.3 119.35 -61.1 128.6Q-65.95 123.1 -70.25 117.25Q-74.6 111.35 -78.45 105.15Q-82.1 99.3 -85 93Q-88.05 86.55 -90.05 79.7Q-92.15 72.5 -93.25 65.1Q-94.4 58.2 -94.1 51.2Q-93.75 44.35 -92.7 37.6L-89.8 38.9L-88.95 39.45Q-88.65 54.15 -87.55 59.55Q-80.65 94.5 -36.65 117.25Q-79.8 89.8 -86.3 53.1Q-87.65 46.65 -88 39.65Q-82.9 41.75 -77.45 42.75Q-75.75 50.75 -73.65 57.15Q-63.75 86.35 -17 98.3Q-24.05 95.95 -30.6 92.75L-43.65 85.9Q-49.9 82.35 -55.45 77.6Q-60.8 73 -64.8 67.15Q-68.9 61.25 -71.85 54.85Q-74.6 49.1 -76.35 42.95L-70.55 43.6L-67 43.6Q-62.95 52.1 -60.5 55.4L-56.8 60.35Q-54.55 63.35 -48.8 66.9Q-43.05 70.4 -36.5 73Q-29.85 75.65 -22.85 77.15Q-16.2 78.55 -9.45 79.15Q-2.2 79.8 5.1 79.35Q-45.9 75.55 -60.6 50.3L-64.7 43.4L-56.05 41.95Q-53.85 45.65 -50.25 50Q-32.2 72.1 21 57.85Q-34.85 68.4 -51.15 44.85L-53.7 41.2L-45.35 38.35L-42.05 40.95Q-17.75 61.45 29.75 36.85Q19.85 40.9 12.75 42.9Q5.95 44.75 -1 46Q-8.35 47.35 -16.2 46.35Q-24.05 45.3 -31.5 43.3Q-38.9 41.25 -42.55 37.05L-34.25 34.05Q-24.55 30.7 -16.75 24.5Q-12.1 20.75 -8.6 15.6" />
+            </g>
+            <g id="Espina" transform="matrix(1, 0, 0, 1, 0, 0)">
+              <linearGradient id="LinearGradID_2" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.0229492, 0, 0, -0.0152893, 0, 0.05)" spreadMethod="pad" x1="-819.2" y1="0" x2="819.2" y2="0">
+                <stop offset="0" style="stop-color:#CCCCCC;stop-opacity:1" />
+                <stop offset="1" style="stop-color:#333333;stop-opacity:1" />
+              </linearGradient>
+              <path style="fill:url(#LinearGradID_2) " d="M-18.8,0Q-17.85 -5.7 -12.3 -9.6Q-11.2 -5.35 -6.5 -8.25L-6.45 -8.2L-6.2 -8.3Q1.25 -16.25 6.65 -12.4Q0.05 -12.55 0 -5.95Q2.7 -2.4 7.75 -4.1Q18 -1.45 18.8 0L-18.8 0" />
+              <linearGradient id="LinearGradID_3" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.0229492, 0, 0, 0.0152893, 0, -0.05)" spreadMethod="pad" x1="-819.2" y1="0" x2="819.2" y2="0">
+                <stop offset="0" style="stop-color:#CCCCCC;stop-opacity:1" />
+                <stop offset="1" style="stop-color:#333333;stop-opacity:1" />
+              </linearGradient>
+              <path style="fill:url(#LinearGradID_3) " d="M18.8,0Q18 1.45 7.75 4.1Q2.7 2.4 0 5.95Q0.05 12.55 6.65 12.4Q1.25 16.25 -6.2 8.35Q-6.35 8.25 -6.45 8.25L-6.5 8.25Q-11.2 5.35 -12.3 9.6Q-17.85 5.7 -18.8 0L18.8 0" />
+            </g>
+          </defs>
+          <g id="screen" />
+          <g id="screen-hybrid" />
+        </svg>
+      </div>
+    </div>
+
+    <aside class="sb">
+      <div class="sb-logo">
+        <div class="sb-logo-mark">
+          <svg class="logo-glyph" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/necropolis-glyphs.svg#glyph-skull"/></svg>
+          <h1>Hanork</h1>
+          <svg class="logo-glyph" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/necropolis-glyphs.svg#glyph-skull"/></svg>
+        </div>
+        <p>Necropolis · Command</p>
+      </div>
+      <div class="sb-glyphs" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><use href="/assets/necropolis-glyphs.svg#glyph-blades"/></svg>
+        <svg viewBox="0 0 64 64"><use href="/assets/necropolis-glyphs.svg#glyph-chain"/></svg>
+        <svg viewBox="0 0 64 64"><use href="/assets/necropolis-glyphs.svg#glyph-crown"/></svg>
+        <svg viewBox="0 0 64 64"><use href="/assets/necropolis-glyphs.svg#glyph-rose"/></svg>
+      </div>
+      <nav class="nav">
+        <button class="ni active" data-page="dashboard"><span class="ni-ico" aria-hidden="true">⌂</span>Dashboard</button>
+        <div class="nav-section">Operações</div>
+        <button class="ni" data-page="operacoes"><span class="ni-ico" aria-hidden="true">⚡</span>Centro Ops</button>
+        <button class="ni" data-page="telegram"><span class="ni-ico" aria-hidden="true">✦</span>Telegram</button>
+        <button class="ni" data-page="whatsapp"><span class="ni-ico" aria-hidden="true">◉</span>WhatsApp</button>
+        <button class="ni" data-page="grupos"><span class="ni-ico" aria-hidden="true">⊞</span>Grupos TG</button>
+        <button class="ni" data-page="sistema"><span class="ni-ico" aria-hidden="true">◎</span>Sistema</button>
+        <div class="nav-section">Negócio</div>
+        <button class="ni" data-page="produtos"><span class="ni-ico" aria-hidden="true">◆</span>Produtos</button>
+        <button class="ni" data-page="pedidos"><span class="ni-ico" aria-hidden="true">≡</span>Pedidos</button>
+        <button class="ni" data-page="usuarios"><span class="ni-ico" aria-hidden="true">◯</span>Usuários</button>
+        <button class="ni" data-page="financeiro"><span class="ni-ico" aria-hidden="true">₪</span>Financeiro</button>
+        <div class="sep"></div>
+        <button class="ni" data-page="cupons"><span class="ni-ico" aria-hidden="true">⊡</span>Cupons</button>
+        <button class="ni" data-page="crm"><span class="ni-ico" aria-hidden="true">◈</span>CRM</button>
+        <button class="ni" data-page="lojas"><span class="ni-ico" aria-hidden="true">⬡</span>Lojas SaaS</button>
+      </nav>
+      <div class="sb-foot">
+        <button class="btn-out" type="button" onclick="doLogout()" aria-label="Encerrar sessão">
+          <span class="btn-out-ico" aria-hidden="true">⎋</span>
+          <span>Sair do painel</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="mob-overlay" id="mob-overlay" hidden aria-hidden="true"></div>
+
+    <main class="main">
+      <div class="topbar">
+        <div class="tb-left">
+          <button type="button" class="btn-mob-menu" id="btn-mob-menu" aria-label="Abrir menu">☰</button>
+          <div class="tb-head-text">
+            <div class="tb-title" id="ptitle">Dashboard</div>
+            <div class="tb-sub" id="tb-sub">Visão geral do negócio</div>
+          </div>
+        </div>
+        <button type="button" class="btn-out-top" id="btn-logout-top" onclick="doLogout()" aria-label="Sair">Sair</button>
+        <div class="tb-right">
+          <span class="scope-pill" id="scope-lbl">Loja principal</span>
+          <select class="tenant-sel" id="tenant-sel" title="Filtrar dados por loja" onchange="onTenantChange()">
+            <option value="legacy">Loja principal</option>
+            <option value="all">Todas as lojas</option>
+          </select>
+          <span class="dot"></span><span class="lbl">Online</span>
+          <span class="badge-time" id="clk">--:--:--</span>
+          <button type="button" class="btn-ref" onclick="doRefresh()">Atualizar</button>
+        </div>
+      </div>
+      <div class="net-access" id="net-access" hidden>
+        <span class="net-tag">Acesso</span>
+        <a class="net-link" id="net-current" href="/admin" title="URL atual">—</a>
+        <span class="net-sep">·</span>
+        <a class="net-link" id="net-local" href="http://localhost:3000/admin">localhost</a>
+        <span id="net-lan-links"></span>
+        <span class="net-warn" id="net-warn" hidden></span>
+        <button type="button" class="btn-net-copy" id="btn-copy-lan" title="Copiar URL Wi‑Fi">📋 Wi‑Fi</button>
+      </div>
+      <div class="content">
+
+        <div class="page on" id="page-dashboard">
+          <div class="gtitle">Visão geral</div>
+          <div class="ops-strip" id="ops-strip">
+            <div class="ops-pill"><div class="lbl">Carregando</div><div class="val">…</div></div>
+          </div>
+          <div class="kpi-grid">
+            <div class="kc">
+              <div class="kc-lbl">Receita Hoje</div>
+              <div class="kc-val" id="k-today">R$ --</div>
+              <div class="kc-sub" id="k-today-s">-- pagos</div>
+            </div>
+            <div class="kc">
+              <div class="kc-lbl">Este Mês</div>
+              <div class="kc-val" id="k-month">R$ --</div>
+              <div class="kc-sub" id="k-month-s">-- ativos hoje</div>
+            </div>
+            <div class="kc">
+              <div class="kc-lbl">Usuários</div>
+              <div class="kc-val" id="k-users">--</div>
+              <div class="kc-sub">total cadastrados</div>
+            </div>
+            <div class="kc">
+              <div class="kc-lbl">Produtos Ativos</div>
+              <div class="kc-val" id="k-prods">--</div>
+              <div class="kc-sub">no catálogo</div>
+            </div>
+          </div>
+          <div class="g2">
+            <div class="card">
+              <div class="card-t">Vendas (7 dias)</div>
+              <div class="bars" id="bars"></div>
+              <div class="bar-ls" id="bar-ls"></div>
+            </div>
+            <div class="card">
+              <div class="card-t">Top produtos</div>
+              <div class="tbl-wrap">
+              <table class="tbl">
+                <thead>
+                  <tr>
+                    <th>Produto</th>
+                    <th>Qtd</th>
+                    <th>Receita</th>
+                  </tr>
+                </thead>
+                <tbody id="tp-body">
+                  <tr>
+                    <td colspan="3" style="color:var(--text2)">Carregando...</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+          </div>
+          <div class="g2">
+            <div class="card">
+              <div class="card-t">Pedidos recentes</div>
+              <div class="feed" id="feed">
+                <div style="color:var(--text2);font-size:.78rem">Carregando...</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-t">Pedidos de hoje</div>
+              <div class="ring-w">
+                <svg width="110" height="110" viewBox="0 0 110 110">
+                  <circle cx="55" cy="55" r="40" fill="none" stroke="var(--border)" stroke-width="14" />
+                  <circle id="rp" cx="55" cy="55" r="40" fill="none" stroke="var(--success)" stroke-width="14"
+                    stroke-dasharray="0 251" stroke-dashoffset="62.75" stroke-linecap="round"
+                    transform="rotate(-90 55 55)" />
+                  <circle id="rw" cx="55" cy="55" r="40" fill="none" stroke="var(--warning)" stroke-width="14"
+                    stroke-dasharray="0 251" stroke-dashoffset="62.75" stroke-linecap="round"
+                    transform="rotate(-90 55 55)" />
+                </svg>
+                <div class="ring-leg">
+                  <div class="ring-i"><span class="ring-d" style="background:var(--success)"></span><span
+                      id="r-paid">Pagos: --</span></div>
+                  <div class="ring-i"><span class="ring-d" style="background:var(--warning)"></span><span
+                      id="r-pend">Pendentes: --</span></div>
+                  <div class="ring-i"><span class="ring-d" style="background:var(--purple3)"></span><span
+                      id="r-week">Semana: R$ --</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page" id="page-operacoes">
+          <div class="gtitle">Centro de operações</div>
+          <div id="ops-hub-body"><div class="page-idle-hint">Abra esta aba para carregar</div></div>
+        </div>
+
+        <div class="page" id="page-telegram">
+          <div class="gtitle">Telegram · divulgação</div>
+          <div id="ops-tg-body"><div class="page-idle-hint">Abra esta aba para carregar</div></div>
+        </div>
+
+        <div class="page" id="page-whatsapp">
+          <div class="gtitle">WhatsApp · Zero Divu</div>
+          <div id="ops-wa-body"><div class="page-idle-hint">Abra esta aba para carregar</div></div>
+        </div>
+
+        <div class="page" id="page-grupos">
+          <div class="gtitle">Grupos Telegram</div>
+          <div id="ops-grp-body"><div class="page-idle-hint">Abra esta aba para carregar</div></div>
+        </div>
+
+        <div class="page" id="page-sistema">
+          <div class="gtitle">Sistema · filas & saúde</div>
+          <div id="ops-sys-body"><div class="page-idle-hint">Abra esta aba para carregar</div></div>
+        </div>
+
+        <div class="page" id="page-crm">
+          <div class="gtitle">CRM & segmentos</div>
+          <div id="ops-crm-body"><div class="page-idle-hint">Abra esta aba para carregar</div></div>
+        </div>
+
+        <div class="page" id="page-produtos">
+          <div class="gtitle">Produtos</div>
+          <div class="page-toolbar">
+            <input class="inp" id="prod-q" type="search" placeholder="Buscar por nome ou categoria…" oninput="filterProds()" autocomplete="off" />
+            <button type="button" class="btn-primary" onclick="openProdModal()">+ Novo produto</button>
+          </div>
+          <div id="prod-scope-warn" class="scope-warn" hidden>
+            ⚠ Para criar ou editar, selecione <strong>Loja principal</strong> ou uma loja SaaS no topo — o modo <em>Todas as lojas</em> é só leitura.
+          </div>
+          <div class="pg" id="pg">
+            <div class="page-idle-hint">Abra esta aba para carregar</div>
+          </div>
+        </div>
+
+        <div class="page" id="page-pedidos">
+          <div class="gtitle">Pedidos</div>
+          <div class="card">
+            <div class="card-t">Registro de pedidos</div>
+            <div class="tbl-wrap">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Usuário</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                  <th>Data</th>
+                </tr>
+              </thead>
+              <tbody id="ord-body">
+                <tr>
+                  <td colspan="5" class="page-idle-hint">Abra esta aba para carregar</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="page" id="page-usuarios">
+          <div class="gtitle">Usuários</div>
+          <div class="srch"><input class="inp" id="usrq" type="text" placeholder="Buscar por nome ou @username..."
+              oninput="filterU()" /></div>
+          <div class="card">
+            <div class="card-t">Base de usuários</div>
+            <div class="tbl-wrap">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Telegram ID</th>
+                  <th>Nome</th>
+                  <th>Username</th>
+                  <th>Pedidos</th>
+                  <th>Total Gasto</th>
+                  <th>Cadastro</th>
+                </tr>
+              </thead>
+              <tbody id="usr-body">
+                <tr>
+                  <td colspan="6" class="page-idle-hint">Abra esta aba para carregar</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="page" id="page-financeiro">
+          <div class="gtitle">Financeiro</div>
+          <div class="kpi-grid">
+            <div class="kc">
+              <div class="kc-lbl">Hoje</div>
+              <div class="kc-val" id="f-today">R$ --</div>
+              <div class="kc-sub" id="f-today-s">-- ontem</div>
+            </div>
+            <div class="kc">
+              <div class="kc-lbl">Semana</div>
+              <div class="kc-val" id="f-week">R$ --</div>
+            </div>
+            <div class="kc">
+              <div class="kc-lbl">Mês</div>
+              <div class="kc-val" id="f-month">R$ --</div>
+            </div>
+            <div class="kc">
+              <div class="kc-lbl">Estoque baixo</div>
+              <div class="kc-val" id="f-lowstock">--</div>
+              <div class="kc-sub">produtos</div>
+            </div>
+          </div>
+          <div class="g2">
+            <div class="card">
+              <div class="card-t">Vendas (30 dias)</div>
+              <div class="bars" id="bars30"></div>
+              <div class="bar-ls" id="bar-ls30"></div>
+            </div>
+            <div class="card">
+              <div class="card-t">Funil de conversão</div>
+              <div id="funnel-body" class="page-idle-hint" style="font-size:.82rem">Abra Financeiro ou aguarde</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page" id="page-lojas">
+          <div class="gtitle">Lojas SaaS</div>
+          <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">Gerencie lojistas cadastrados via <code>/registrar_loja</code>. Selecione uma loja no topo para ver só os dados dela.</p>
+          <div id="tenants-list">
+            <div class="page-idle-hint">Abra esta aba para carregar</div>
+          </div>
+        </div>
+
+        <div class="page" id="page-cupons">
+          <div class="gtitle">Cupons</div>
+          <div class="card">
+            <div class="card-t">Cupons ativos</div>
+            <div class="tbl-wrap">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Tipo</th>
+                  <th>Valor</th>
+                  <th>Usos</th>
+                  <th>Válido até</th>
+                </tr>
+              </thead>
+              <tbody id="cup-body">
+                <tr>
+                  <td colspan="5" class="page-idle-hint">Abra esta aba para carregar</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="app-footer">
+        <span class="footer-brand">
+          <svg class="footer-glyph" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/necropolis-glyphs.svg#glyph-skull"/></svg>
+          Hanork · Necropolis
+        </span>
+        <span id="status-date">--</span>
+      </footer>
+    </main>
+  </div>
+
+  <div id="prod-modal" class="modal" hidden aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeProdModal()"></div>
+    <div class="modal-panel" role="dialog" aria-labelledby="prod-modal-title">
+      <div class="modal-head">
+        <h2 id="prod-modal-title">Produto</h2>
+        <button type="button" class="modal-x" onclick="closeProdModal()" aria-label="Fechar">×</button>
+      </div>
+      <form id="prod-form" class="modal-body" onsubmit="saveProd(event)">
+        <input type="hidden" id="prod-id" value="" />
+        <label class="fld-lbl" for="prod-name">Nome</label>
+        <input class="inp fld" id="prod-name" required maxlength="200" placeholder="Nome do produto" />
+        <div class="fld-row">
+          <div class="fld-col">
+            <label class="fld-lbl" for="prod-price">Preço (R$)</label>
+            <input class="inp fld" id="prod-price" type="number" step="0.01" min="0" required placeholder="0,00" />
+          </div>
+          <div class="fld-col">
+            <label class="fld-lbl" for="prod-stock">Estoque</label>
+            <input class="inp fld" id="prod-stock" type="number" min="0" step="1" placeholder="999" />
+          </div>
+        </div>
+        <label class="fld-lbl" for="prod-category">Categoria</label>
+        <input class="inp fld" id="prod-category" list="prod-cats" placeholder="geral" />
+        <datalist id="prod-cats">
+          <option value="geral"></option>
+          <option value="digital"></option>
+          <option value="software"></option>
+          <option value="curso"></option>
+          <option value="assinatura"></option>
+        </datalist>
+        <label class="fld-lbl" for="prod-desc">Descrição</label>
+        <textarea class="inp fld fld-area" id="prod-desc" rows="4" placeholder="Descrição exibida no catálogo…"></textarea>
+        <label class="fld-lbl" for="prod-photo">URL da foto</label>
+        <input class="inp fld" id="prod-photo" type="url" placeholder="https://…" />
+        <label class="fld-lbl" for="prod-file">URL do arquivo (entrega)</label>
+        <input class="inp fld" id="prod-file" type="url" placeholder="https://… ou caminho" />
+        <label class="fld-check">
+          <input type="checkbox" id="prod-active" checked />
+          <span>Produto ativo no catálogo</span>
+        </label>
+        <div class="modal-foot">
+          <button type="button" class="btn-sm" onclick="closeProdModal()">Cancelar</button>
+          <button type="submit" class="btn-primary" id="prod-save-btn">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/necropolis-glyphs.js?v=1"></script>
+  <script src="/js/admin-utils.js?v=1"></script>
+  <script src="/js/admin-ops-panel.js?v=6"></script>
+  <script src="/js/dragon-cursor.js?v=12"></script>
+  <script src="/js/centipede-cursor.js?v=11"></script>
+  <script src="/js/partner-cursors.js?v=17"></script>
+  <script>
+    "use strict";
+
+    // ── CLOCK + HUD ───────────────────────────────────────────────────────────────
+    const clk = document.getElementById("clk");
+    const pageSubs = {
+      dashboard: "Visão geral · negócio + ops live",
+      operacoes: "Telegram, WhatsApp, filas, alertas",
+      telegram: "Divulgação, ponte MTProto, AutoBroadcast",
+      whatsapp: "Zero Divu · conexão, postGuard, anti-ban",
+      grupos: "Grupos onde o bot é admin",
+      sistema: "Saúde, memória, filas Bull",
+      crm: "Segmentação e estatísticas",
+      produtos: "Catálogo e estoque",
+      pedidos: "Histórico de transações",
+      usuarios: "Clientes cadastrados",
+      financeiro: "Receitas e indicadores",
+      cupons: "Descontos e promoções",
+      lojas: "Gestão multi-loja",
+    };
+
+    function tickClock() {
+      try {
+        const now = new Date();
+        if (clk) clk.textContent = now.toLocaleTimeString("pt-BR");
+        const sd = document.getElementById("status-date");
+        if (sd) sd.textContent = now.toLocaleDateString("pt-BR") + " " + now.toLocaleTimeString("pt-BR");
+      } catch (_) { /* ignore */ }
+    }
+
+    // ── TOAST ─────────────────────────────────────────────────────────────────────
+    function toast(m) {
+      const t = document.getElementById("toast");
+      t.textContent = m; t.classList.add("show");
+      setTimeout(() => t.classList.remove("show"), 3000);
+    }
+
+    async function doLogout() {
+      try {
+        await fetch("/admin/logout", { method: "POST", credentials: "include", headers: csrfHeaders() });
+      } catch { /* redirect anyway */ }
+      location.href = "/admin/login";
+    }
+
+    function networkFetchHint() {
+      const h = location.hostname;
+      const port = dashContext?.network?.port || 3000;
+      if (/^172\.(1[6-9]|2\d|3[01])\./.test(h) || /^192\.168\.(11[2-9]|12[0-7])\./.test(h)) {
+        return "IP virtual WSL — no celular use só o Wi‑Fi do PC (ex. 192.168.100.x). No Windows (Admin): netsh interface portproxy para redirecionar a porta " + port + ".";
+      }
+      const lan = dashContext?.network?.adminLanUrls?.[0];
+      if (lan) {
+        return "No celular use " + lan.replace(/^https?:\/\//, "") + " (mesmo Wi‑Fi). Confira firewall Windows porta " + port + ".";
+      }
+      return "Confira se o bot está rodando e se o firewall liberou a porta " + port + ".";
+    }
+
+    function initMobileNav() {
+      const sb = document.querySelector(".sb");
+      const overlay = document.getElementById("mob-overlay");
+      const btnMenu = document.getElementById("btn-mob-menu");
+      if (!sb || !overlay || !btnMenu) return;
+
+      function closeMenu() {
+        sb.classList.remove("mob-open");
+        overlay.hidden = true;
+        overlay.classList.remove("on");
+        document.body.classList.remove("mob-nav-open");
+      }
+
+      function openMenu() {
+        sb.classList.add("mob-open");
+        overlay.hidden = false;
+        overlay.classList.add("on");
+        document.body.classList.add("mob-nav-open");
+      }
+
+      btnMenu.addEventListener("click", () => {
+        if (sb.classList.contains("mob-open")) closeMenu();
+        else openMenu();
+      });
+      overlay.addEventListener("click", closeMenu);
+      sb.querySelectorAll(".ni[data-page]").forEach((b) => {
+        b.addEventListener("click", () => {
+          if (window.matchMedia("(max-width: 700px)").matches) closeMenu();
+        });
+      });
+    }
+
+    // ── API ───────────────────────────────────────────────────────────────────────
+    const fmt = v => "R$ " + (+v || 0).toFixed(2).replace(".", ",");
+    const fdate = d => d ? new Date(d).toLocaleDateString("pt-BR") : "--";
+    const { esc, escAttr, escUrl, getCsrfToken, csrfHeaders } = window.HanorkAdminUtils ?? (() => {
+      const esc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+      const escAttr = s => esc(s).replace(/'/g, "&#39;");
+      const escUrl = u => { const s = String(u ?? ""); return /^https?:\/\//i.test(s) ? esc(s) : ""; };
+      const getCsrfToken = () => {
+        const m = document.cookie.match(/(?:^|;\s*)dashboard_csrf=([^;]+)/);
+        return m ? decodeURIComponent(m[1]) : "";
+      };
+      const csrfHeaders = (headers = {}) => {
+        const token = getCsrfToken();
+        return token ? { ...headers, "X-CSRF-Token": token } : headers;
+      };
+      return { esc, escAttr, escUrl, getCsrfToken, csrfHeaders };
+    })();
+    let currentTenant = localStorage.getItem("hanork_dashboard_tenant") || "legacy";
+    let dashContext = { siteBase: "" };
+
+    function tenantQuery(path) {
+      const sep = path.includes("?") ? "&" : "?";
+      return path + sep + "tenant_id=" + encodeURIComponent(currentTenant);
+    }
+
+    const API_TIMEOUT_MS = 15000;
+    let _navGen = 0;
+    let _activePage = "dashboard";
+    const _loadedOnce = new Set();
+
+    function activePage() {
+      return document.querySelector(".ni.active")?.dataset?.page || _activePage;
+    }
+
+    function isPageActive(page) {
+      return activePage() === page;
+    }
+
+    function bumpNav() {
+      return ++_navGen;
+    }
+
+    function loadSpin(msg) {
+      return `<div class="page-load-msg"><span class="page-load-spin"></span> ${msg || "Carregando…"}</div>`;
+    }
+
+    async function api(path) {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), API_TIMEOUT_MS);
+      try {
+        const r = await fetch(tenantQuery(path), { credentials: "include", signal: ctrl.signal });
+        if (r.status === 401) { location.href = "/admin/login?expired=1"; throw new Error("Sessão expirada"); }
+        if (!r.ok) {
+          let detail = "";
+          try {
+            const errBody = await r.json();
+            if (errBody?.error) detail = ": " + errBody.error;
+          } catch { /* ignore */ }
+          throw new Error("HTTP " + r.status + detail + " (" + path + ")");
+        }
+        return r.json();
+      } catch (e) {
+        if (e.name === "AbortError") throw new Error("Timeout ao carregar " + path);
+        if (e.message === "Failed to fetch" || (e.name === "TypeError" && !e.message.includes("HTTP"))) {
+          throw new Error("Sem conexão com o servidor. " + networkFetchHint());
+        }
+        throw e;
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    async function apiMut(method, path, body) {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), API_TIMEOUT_MS);
+      const headers = csrfHeaders(body != null ? { "Content-Type": "application/json" } : {});
+      try {
+        const r = await fetch(tenantQuery(path), {
+          method,
+          credentials: "include",
+          signal: ctrl.signal,
+          headers,
+          body: body != null ? JSON.stringify(body) : undefined,
+        });
+        if (r.status === 401) { location.href = "/admin/login?expired=1"; throw new Error("Sessão expirada"); }
+        if (!r.ok) {
+          let detail = "";
+          try {
+            const errBody = await r.json();
+            if (errBody?.error) detail = ": " + errBody.error;
+          } catch { /* ignore */ }
+          throw new Error("HTTP " + r.status + detail);
+        }
+        const ct = r.headers.get("content-type") || "";
+        if (ct.includes("application/json")) return r.json();
+        return { ok: true };
+      } catch (e) {
+        if (e.name === "AbortError") throw new Error("Timeout ao salvar " + path);
+        throw e;
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    function canMutate() {
+      if (currentTenant === "all") {
+        toast("⚠️ Selecione Loja principal ou uma loja SaaS para editar");
+        return false;
+      }
+      return true;
+    }
+
+    function updateProdScopeWarn() {
+      const el = document.getElementById("prod-scope-warn");
+      if (el) el.hidden = currentTenant !== "all";
+    }
+
+    function hideLoading() {
+      const el = document.getElementById("loading");
+      if (!el || el.classList.contains("hide")) return;
+      el.classList.add("hide");
+      setTimeout(() => { el.style.display = "none"; }, 550);
+    }
+
+    function pageErr(el, err, emptyMsg) {
+      const msg = err?.message || String(err);
+      if (typeof el === "string") el = document.getElementById(el);
+      if (!el) { toast("⚠️ " + msg); return; }
+      el.innerHTML = `<div class="page-load-msg page-load-err">⚠ ${esc(msg)}<br><small style="opacity:.7">${esc(emptyMsg || "Tente Atualizar ou verifique se o bot está rodando.")}</small></div>`;
+    }
+
+    async function onTenantChange() {
+      const sel = document.getElementById("tenant-sel");
+      currentTenant = sel.value;
+      localStorage.setItem("hanork_dashboard_tenant", currentTenant);
+      try {
+        await fetch("/api/dashboard/tenant", {
+          method: "POST",
+          credentials: "include",
+          headers: csrfHeaders({ "Content-Type": "application/json" }),
+          body: JSON.stringify({ tenant_id: currentTenant })
+        });
+      } catch { /* cookie opcional */ }
+      updateScopeLabel();
+      updateProdScopeWarn();
+      doRefresh();
+    }
+
+    function updateScopeLabel() {
+      const sel = document.getElementById("tenant-sel");
+      const opt = sel.options[sel.selectedIndex];
+      document.getElementById("scope-lbl").textContent = opt ? opt.textContent : "—";
+    }
+
+    async function loadTenantSelector() {
+      try {
+        const ctrl = new AbortController();
+        const t = setTimeout(() => ctrl.abort(), API_TIMEOUT_MS);
+        const res = await fetch("/api/dashboard/context", { credentials: "include", signal: ctrl.signal });
+        clearTimeout(t);
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const ctx = await res.json();
+        dashContext = ctx;
+        const sel = document.getElementById("tenant-sel");
+        sel.innerHTML = (ctx.scopes || []).map(s =>
+          `<option value="${escAttr(s.id)}">${esc(s.label)}</option>`
+        ).join("");
+        (ctx.tenants || []).forEach(t => {
+          const o = document.createElement("option");
+          o.value = String(t.id);
+          o.textContent = `${t.name} (${t.plan})`;
+          sel.appendChild(o);
+        });
+        if ([...sel.options].some(o => o.value === currentTenant)) sel.value = currentTenant;
+        else { currentTenant = "legacy"; sel.value = "legacy"; }
+        updateScopeLabel();
+        updateProdScopeWarn();
+        renderNetworkAccess(ctx.network);
+        await fetch("/api/dashboard/tenant", {
+          method: "POST",
+          credentials: "include",
+          headers: csrfHeaders({ "Content-Type": "application/json" }),
+          body: JSON.stringify({ tenant_id: currentTenant })
+        }).catch(() => {});
+      } catch (e) { console.warn("[tenant]", e); }
+    }
+
+    function renderNetworkAccess(net) {
+      const bar = document.getElementById("net-access");
+      if (!bar || !net) return;
+      bar.hidden = false;
+
+      const cur = net.access?.adminUrl || net.adminLocalUrl || "/admin";
+      const curEl = document.getElementById("net-current");
+      if (curEl) {
+        curEl.href = cur;
+        curEl.textContent = net.access?.isLan ? `Wi‑Fi (${net.access.host})` : "Local";
+        curEl.title = cur;
+      }
+
+      const localEl = document.getElementById("net-local");
+      if (localEl) {
+        localEl.href = net.adminLocalUrl || "http://localhost:3000/admin";
+        localEl.textContent = "localhost:" + (net.port || 3000);
+      }
+
+      const lanWrap = document.getElementById("net-lan-links");
+      if (lanWrap) {
+        const urls = net.adminLanUrls || [];
+        lanWrap.innerHTML = urls.length
+          ? urls.map((u) => {
+              const ip = u.replace(/^https?:\/\//, "").replace(/\/admin$/, "");
+              return `<span class="net-sep">·</span><a class="net-link net-lan" href="${u}" title="Abrir no celular/tablet (mesmo Wi‑Fi)">${ip}</a>`;
+            }).join("")
+          : `<span class="net-sep">·</span><span class="net-muted">sem IP LAN</span>`;
+      }
+
+      const copyBtn = document.getElementById("btn-copy-lan");
+      if (copyBtn) {
+        const primary = (net.adminLanUrls && net.adminLanUrls[0]) || net.adminLocalUrl;
+        copyBtn.onclick = () => {
+          navigator.clipboard?.writeText(primary).then(
+            () => toast("URL copiada: " + primary),
+            () => toast(primary)
+          );
+        };
+      }
+
+      const warnEl = document.getElementById("net-warn");
+      if (warnEl) {
+        if (net.access?.isWslInternal) {
+          warnEl.hidden = false;
+          warnEl.textContent = "⚠ IP WSL — celular não alcança. Use o link Wi‑Fi verde.";
+        } else if (!(net.adminLanUrls || []).length && net.wslHint) {
+          warnEl.hidden = false;
+          warnEl.textContent = "⚠ IP Wi‑Fi não detectado — veja Dashboard no Telegram ou DASHBOARD_LAN_HOST";
+        } else {
+          warnEl.hidden = true;
+        }
+      }
+    }
+
+    // ── NAV ───────────────────────────────────────────────────────────────────────
+    const titles = {
+      dashboard: "Dashboard", operacoes: "Centro Ops", telegram: "Telegram",
+      whatsapp: "WhatsApp", grupos: "Grupos TG", sistema: "Sistema", crm: "CRM",
+      produtos: "Produtos", pedidos: "Pedidos", usuarios: "Usuários",
+      financeiro: "Financeiro", cupons: "Cupons", lojas: "Lojas SaaS"
+    };
+    document.querySelectorAll(".ni[data-page]").forEach(b => {
+      b.addEventListener("click", () => {
+        const pageId = b.dataset.page;
+        const pageEl = document.getElementById("page-" + pageId);
+        if (!pageEl) {
+          console.warn("[nav] página não encontrada:", pageId);
+          return;
+        }
+        document.querySelectorAll(".ni").forEach(x => x.classList.remove("active"));
+        document.querySelectorAll(".page").forEach(x => x.classList.remove("on"));
+        b.classList.add("active");
+        pageEl.classList.add("on");
+        document.getElementById("ptitle").textContent = titles[pageId] || "";
+        const sub = document.getElementById("tb-sub");
+        if (sub) sub.textContent = pageSubs[pageId] || "";
+        _activePage = pageId;
+        const gen = bumpNav();
+        loadPage(pageId, { force: true, gen });
+      });
+    });
+
+    // ── DASHBOARD — usa /api/dashboard/* (DashboardService com cache) ─────────────
+    async function loadDash(opts = {}) {
+      const page = "dashboard";
+      const silent = opts.silent === true;
+      const gen = opts.gen ?? _navGen;
+      const tpBody = document.getElementById("tp-body");
+      const feed = document.getElementById("feed");
+      try {
+        if (!silent) {
+          if (tpBody) tpBody.innerHTML = `<tr><td colspan="3">${loadSpin("Carregando produtos…")}</td></tr>`;
+          if (feed) feed.innerHTML = loadSpin("Carregando pedidos…");
+        }
+        const [kpis, chart, recentOrders] = await Promise.all([
+          api("/api/dashboard/kpis"),
+          api("/api/dashboard/chart?days=7").catch(() => []),
+          api("/api/dashboard/orders?limit=5").catch(() => [])
+        ]);
+        if (!isPageActive(page) || gen !== _navGen) return;
+
+        const rev = kpis.revenue || {};
+        const ord = kpis.orders || {};
+        const usr = kpis.users || {};
+        const prd = kpis.products || {};
+
+        const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+        set("k-today", fmt(rev.today));
+        set("k-today-s", (ord.today || 0) + " pagos hoje");
+        set("k-month", fmt(rev.month));
+        set("k-month-s", (usr.active_today || 0) + " ativos hoje");
+        set("k-users", usr.total || "--");
+        set("k-prods", prd.active || "--");
+
+        document.querySelectorAll(".kc-val").forEach(el => {
+          el.classList.remove("kc-pulse");
+          void el.offsetWidth;
+          el.classList.add("kc-pulse");
+        });
+
+        const bc = document.getElementById("bars"), bl = document.getElementById("bar-ls");
+        if (bc && bl) {
+          bc.innerHTML = ""; bl.innerHTML = "";
+          const dn = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+          const arr = Array.isArray(chart) ? chart : [];
+          const mx = Math.max(...arr.map(p => p.revenue || 0), 1);
+          arr.forEach(p => {
+            const dobj = new Date(p.date + "T12:00:00");
+            const b = document.createElement("div"); b.className = "bar";
+            b.style.height = Math.max(((p.revenue || 0) / mx) * 90, 3) + "%";
+            b.title = fmt(p.revenue) + " · " + (p.orders || 0) + " pedidos";
+            bc.appendChild(b);
+            const lb = document.createElement("div"); lb.className = "bar-l";
+            lb.textContent = dn[dobj.getDay()]; bl.appendChild(lb);
+          });
+        }
+
+        api("/api/dashboard/top-products?limit=5").then(tarr => {
+          if (!isPageActive(page)) return;
+          const a = Array.isArray(tarr) ? tarr : [];
+          if (tpBody) {
+            tpBody.innerHTML = a.length
+              ? a.slice(0, 5).map(p =>
+                `<tr><td>${esc(p.name)}</td><td>${p.sales || p.sales_count || 0}</td><td>${fmt(p.revenue)}</td></tr>`
+              ).join("")
+              : '<tr><td colspan="3" style="color:var(--text2)">Sem dados ainda</td></tr>';
+          }
+        }).catch(() => {
+          if (tpBody) tpBody.innerHTML = '<tr><td colspan="3" style="color:var(--text2)">Sem dados ainda</td></tr>';
+        });
+
+        const paid = ord.today || 0, pend = ord.pending || 0;
+        const tot = paid + pend || 1, CC = 2 * Math.PI * 40;
+        const pa = (paid / tot) * CC, wa = (pend / tot) * CC;
+        const rp = document.getElementById("rp"), rw = document.getElementById("rw");
+        if (rp) rp.setAttribute("stroke-dasharray", `${pa} ${CC - pa}`);
+        if (rw) {
+          rw.setAttribute("stroke-dasharray", `${wa} ${CC - wa}`);
+          rw.setAttribute("stroke-dashoffset", String(62.75 - pa));
+        }
+        set("r-paid", `Pagos hoje: ${paid}`);
+        set("r-pend", `Pendentes: ${pend}`);
+        set("r-week", `Semana: ${fmt(rev.week)}`);
+
+        const items = Array.isArray(recentOrders) ? recentOrders.slice(0, 5) : [];
+        if (feed) {
+          feed.innerHTML = items.length
+            ? items.map(o => {
+              const ok = o.status === "PAID" || o.status === "DELIVERED";
+              const nm = o.first_name || (o.username ? "@" + o.username : "") || o.telegram_id || "--";
+              return `<div class="fi"><div class="fi-ico ${ok ? "sale" : "pend"}">${ok ? "✓" : "…"}</div>`
+                + `<div><div class="fi-msg">${esc(nm)} — ${fmt(o.total)}</div>`
+                + `<div class="fi-time">${fdate(o.created_at)} · ${esc(o.status)}</div></div></div>`;
+            }).join("")
+            : '<div style="color:var(--text2);font-size:.78rem">Sem atividade recente</div>';
+        }
+        _loadedOnce.add(page);
+      } catch (e) {
+        console.error("[dash]", e);
+        if (!isPageActive(page)) return;
+        if (tpBody) tpBody.innerHTML = `<tr><td colspan="3"><div class="page-load-msg page-load-err">⚠ ${esc(e.message)}</div></td></tr>`;
+        if (feed) feed.innerHTML = `<div class="page-load-msg page-load-err">⚠ ${esc(e.message)}</div>`;
+        if (!silent) toast("⚠️ " + e.message);
+      }
+    }
+
+    // ── FINANCEIRO ────────────────────────────────────────────────────────────────
+    async function loadFin(opts = {}) {
+      const page = "financeiro";
+      const silent = opts.silent === true;
+      const gen = opts.gen ?? _navGen;
+      const funnelEl = document.getElementById("funnel-body");
+      try {
+        if (!silent && funnelEl) funnelEl.innerHTML = loadSpin("Carregando funil…");
+        const [kpis, chart30, funnel] = await Promise.all([
+          api("/api/dashboard/kpis"),
+          api("/api/dashboard/chart?days=30").catch(() => []),
+          api("/api/dashboard/funnel").catch(() => null)
+        ]);
+        if (!isPageActive(page) || gen !== _navGen) return;
+        const rev = kpis.revenue || {}, prd = kpis.products || {};
+        document.getElementById("f-today").textContent = fmt(rev.today);
+        document.getElementById("f-today-s").textContent = fmt(rev.yesterday) + " ontem";
+        document.getElementById("f-week").textContent = fmt(rev.week);
+        document.getElementById("f-month").textContent = fmt(rev.month);
+        document.getElementById("f-lowstock").textContent = prd.low_stock || 0;
+
+        const bc = document.getElementById("bars30"), bl = document.getElementById("bar-ls30");
+        if (bc && bl) {
+          bc.innerHTML = ""; bl.innerHTML = "";
+          const dn = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+          const arr = Array.isArray(chart30) ? chart30 : [];
+          const mx = Math.max(...arr.map(p => p.revenue || 0), 1);
+          arr.forEach(p => {
+            const dobj = new Date(p.date + "T12:00:00");
+            const b = document.createElement("div"); b.className = "bar";
+            b.style.height = Math.max(((p.revenue || 0) / mx) * 90, 3) + "%"; b.title = fmt(p.revenue);
+            bc.appendChild(b);
+            const lb = document.createElement("div"); lb.className = "bar-l";
+            lb.textContent = dn[dobj.getDay()]; bl.appendChild(lb);
+          });
+        }
+
+        if (funnelEl) {
+          if (funnel) {
+            const conv = funnel.orders_created > 0
+              ? ((funnel.orders_paid / funnel.orders_created) * 100).toFixed(1) : "0.0";
+            funnelEl.innerHTML =
+              `<div style="display:flex;justify-content:space-between"><span style="color:var(--text2)">Usuários totais</span><strong>${funnel.users_total || 0}</strong></div>`
+              + `<div style="display:flex;justify-content:space-between"><span style="color:var(--text2)">Pedidos hoje</span><strong>${funnel.orders_created || 0}</strong></div>`
+              + `<div style="display:flex;justify-content:space-between"><span style="color:var(--text-secondary)">Pagos hoje</span><strong style="color:var(--success)">${funnel.orders_paid || 0}</strong></div>`
+              + `<div style="display:flex;justify-content:space-between"><span style="color:var(--text2)">Taxa conversão</span><strong style="color:var(--purple3)">${conv}%</strong></div>`;
+          } else {
+            funnelEl.innerHTML = '<div class="page-load-msg">Sem dados de funil disponíveis</div>';
+          }
+        }
+        _loadedOnce.add(page);
+      } catch (e) {
+        console.error("[fin]", e);
+        if (!isPageActive(page)) return;
+        pageErr("funnel-body", e);
+        toast("⚠️ " + e.message);
+      }
+    }
+
+    // ── PRODUTOS ──────────────────────────────────────────────────────────────────
+    let _products = [];
+
+    function prodThumb(p) {
+      const G = typeof NecropolisGlyphs !== "undefined" ? NecropolisGlyphs : null;
+      if (!p.photo_url) return G ? G.thumbGlyph(p.id) : `<div class="pc-thumb pc-thumb-empty">◆</div>`;
+      return `<div class="pc-thumb" data-prod-id="${p.id}"><img src="${escUrl(p.photo_url)}" alt="" loading="lazy" onerror="window._prodThumbFail(this)"></div>`;
+    }
+
+    window._prodThumbFail = function (img) {
+      const wrap = img.closest(".pc-thumb");
+      const id = wrap?.dataset?.prodId;
+      if (wrap && id && typeof NecropolisGlyphs !== "undefined") {
+        wrap.outerHTML = NecropolisGlyphs.thumbGlyph(id);
+      } else if (wrap) {
+        wrap.outerHTML = `<div class="pc-thumb pc-thumb-empty">◆</div>`;
+      }
+    };
+
+    function renderProds(list) {
+      const box = document.getElementById("pg");
+      if (!box) return;
+      updateProdScopeWarn();
+      const q = (document.getElementById("prod-q")?.value || "").toLowerCase().trim();
+      let items = list || _products;
+      if (q) {
+        items = items.filter(p =>
+          (p.name || "").toLowerCase().includes(q) ||
+          (p.category || "").toLowerCase().includes(q) ||
+          String(p.id).includes(q)
+        );
+      }
+      if (!items.length) {
+        box.innerHTML = q
+          ? '<div class="page-idle-hint">Nenhum produto encontrado para esta busca</div>'
+          : '<div class="page-idle-hint">Nenhum produto cadastrado — clique em <b>+ Novo produto</b></div>';
+        return;
+      }
+      box.innerHTML = items.map(p => {
+        const inactive = !p.active;
+        const thumb = prodThumb(p);
+        return `<article class="pc${inactive ? " pc-off" : ""}" data-id="${p.id}">`
+          + thumb
+          + `<div class="pc-id">#${p.id}</div>`
+          + `<div class="pc-name">${esc(p.name)}</div>`
+          + `<div class="pc-price">${fmt(p.price)}</div>`
+          + `<div class="pc-meta">${esc(p.category || "geral")} · ${esc(p.format || "—")}</div>`
+          + `<div class="pc-meta">Estoque: ${p.stock ?? "∞"} · ${p.active ? "✅ Ativo" : "⏸ Inativo"}</div>`
+          + `<div class="pc-acts">`
+          + `<button type="button" class="btn-sm btn-accent" onclick="openProdModal(${p.id})">Editar</button>`
+          + `<button type="button" class="btn-sm" onclick="toggleProdActive(${p.id})">${p.active ? "Desativar" : "Ativar"}</button>`
+          + `<button type="button" class="btn-sm d" onclick="deleteProd(${p.id})">Excluir</button>`
+          + `</div></article>`;
+      }).join("");
+    }
+
+    function filterProds() { renderProds(_products); }
+
+    function openProdModal(id) {
+      if (id != null && !canMutate()) return;
+      if (id == null && !canMutate()) return;
+      const modal = document.getElementById("prod-modal");
+      const title = document.getElementById("prod-modal-title");
+      const saveBtn = document.getElementById("prod-save-btn");
+      const p = id != null ? _products.find(x => x.id == id) : null;
+      document.getElementById("prod-id").value = p ? p.id : "";
+      document.getElementById("prod-name").value = p?.name || "";
+      document.getElementById("prod-price").value = p != null ? (+p.price || 0).toFixed(2) : "";
+      document.getElementById("prod-stock").value = p?.stock ?? 999;
+      document.getElementById("prod-category").value = p?.category || "geral";
+      document.getElementById("prod-desc").value = p?.description || "";
+      document.getElementById("prod-photo").value = p?.photo_url || "";
+      document.getElementById("prod-file").value = p?.file_url || "";
+      document.getElementById("prod-active").checked = p ? !!p.active : true;
+      title.textContent = p ? `Editar · ${p.name}` : "Novo produto";
+      saveBtn.textContent = p ? "Salvar alterações" : "Criar produto";
+      modal.hidden = false;
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      setTimeout(() => document.getElementById("prod-name")?.focus(), 80);
+    }
+
+    function closeProdModal() {
+      const modal = document.getElementById("prod-modal");
+      if (!modal) return;
+      modal.hidden = true;
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    async function saveProd(e) {
+      e.preventDefault();
+      if (!canMutate()) return;
+      const id = document.getElementById("prod-id").value.trim();
+      const body = {
+        name: document.getElementById("prod-name").value.trim(),
+        price: parseFloat(document.getElementById("prod-price").value) || 0,
+        stock: parseInt(document.getElementById("prod-stock").value, 10) || 0,
+        category: document.getElementById("prod-category").value.trim() || "geral",
+        description: document.getElementById("prod-desc").value.trim(),
+        photo_url: document.getElementById("prod-photo").value.trim(),
+        file_url: document.getElementById("prod-file").value.trim(),
+        active: document.getElementById("prod-active").checked ? 1 : 0,
+      };
+      if (!body.name) { toast("⚠️ Nome obrigatório"); return; }
+      const saveBtn = document.getElementById("prod-save-btn");
+      saveBtn.disabled = true;
+      try {
+        if (id) {
+          await apiMut("PUT", "/api/v1/products/" + id, body);
+          toast("✅ Produto atualizado!");
+        } else {
+          await apiMut("POST", "/api/v1/products", body);
+          toast("✅ Produto criado!");
+        }
+        closeProdModal();
+        _loadedOnce.delete("produtos");
+        await loadProds({ force: true, gen: bumpNav() });
+      } catch (err) {
+        toast("⚠️ " + err.message);
+      } finally {
+        saveBtn.disabled = false;
+      }
+    }
+
+    async function toggleProdActive(id) {
+      if (!canMutate()) return;
+      const p = _products.find(x => x.id == id);
+      if (!p) return;
+      try {
+        await apiMut("PUT", "/api/v1/products/" + id, { active: p.active ? 0 : 1 });
+        toast(p.active ? "⏸ Produto desativado" : "✅ Produto ativado");
+        _loadedOnce.delete("produtos");
+        await loadProds({ force: true, gen: _navGen });
+      } catch (err) {
+        toast("⚠️ " + err.message);
+      }
+    }
+
+    async function deleteProd(id) {
+      if (!canMutate()) return;
+      const p = _products.find(x => x.id == id);
+      if (!p) return;
+      if (!confirm(`Desativar o produto "${p.name}"?\n\nEle sai do catálogo ativo (mesmo efeito do /delproduto no bot).`)) return;
+      try {
+        await apiMut("DELETE", "/api/v1/products/" + id);
+        toast("🗑️ Produto desativado");
+        _loadedOnce.delete("produtos");
+        await loadProds({ force: true, gen: _navGen });
+      } catch (err) {
+        toast("⚠️ " + err.message);
+      }
+    }
+
+    async function loadProds(opts = {}) {
+      const page = "produtos";
+      const gen = opts.gen ?? _navGen;
+      const box = document.getElementById("pg");
+      try {
+        box.innerHTML = loadSpin("Carregando produtos…");
+        const d = await api("/api/v1/products?limit=100");
+        if (!isPageActive(page) || gen !== _navGen) return;
+        _products = d.products || [];
+        renderProds(_products);
+        _loadedOnce.add(page);
+      } catch (e) {
+        if (!isPageActive(page)) return;
+        pageErr(box, e);
+        toast("⚠️ Erro produtos: " + e.message);
+      }
+    }
+
+    // ── PEDIDOS ───────────────────────────────────────────────────────────────────
+    async function loadOrders(opts = {}) {
+      const page = "pedidos";
+      const gen = opts.gen ?? _navGen;
+      const body = document.getElementById("ord-body");
+      try {
+        body.innerHTML = `<tr><td colspan="5">${loadSpin()}</td></tr>`;
+        const d = await api("/api/v1/orders?limit=50");
+        if (!isPageActive(page) || gen !== _navGen) return;
+        const sm = { PAID: "b-paid", WAITING_PAYMENT: "b-pend", DELIVERED: "b-del", PAYMENT_ERROR: "b-err" };
+        const sl = { PAID: "Pago", WAITING_PAYMENT: "Aguardando", DELIVERED: "Entregue", PAYMENT_ERROR: "Erro" };
+        body.innerHTML = (d.orders || []).map(o =>
+          `<tr><td><code style="font-size:.72rem;color:var(--purple3)">#${esc((o.id || "").toString().slice(-8))}</code></td>`
+          + `<td>${esc(o.first_name || o.username || o.user_id || "--")}</td>`
+          + `<td>${fmt(o.total)}</td>`
+          + `<td><span class="bdg ${sm[o.status] || "b-pend"}">${esc(sl[o.status] || o.status)}</span></td>`
+          + `<td>${fdate(o.created_at)}</td></tr>`
+        ).join("") || '<tr><td colspan="5" style="color:var(--text2)">Nenhum pedido</td></tr>';
+        _loadedOnce.add(page);
+      } catch (e) {
+        if (!isPageActive(page)) return;
+        body.innerHTML = `<tr><td colspan="5"><div class="page-load-msg page-load-err">⚠ ${esc(e.message)}</div></td></tr>`;
+        toast("⚠️ Erro pedidos: " + e.message);
+      }
+    }
+
+    // ── USUÁRIOS ──────────────────────────────────────────────────────────────────
+    let _uc = [];
+    async function loadUsers(opts = {}) {
+      const page = "usuarios";
+      const gen = opts.gen ?? _navGen;
+      const body = document.getElementById("usr-body");
+      try {
+        body.innerHTML = `<tr><td colspan="6">${loadSpin()}</td></tr>`;
+        const d = await api("/api/v1/users?limit=100");
+        if (!isPageActive(page) || gen !== _navGen) return;
+        _uc = d.users || d || [];
+        renderU(_uc);
+        _loadedOnce.add(page);
+      } catch (e) {
+        if (!isPageActive(page)) return;
+        body.innerHTML = `<tr><td colspan="6"><div class="page-load-msg page-load-err">⚠ ${esc(e.message)}</div></td></tr>`;
+        toast("⚠️ Erro usuários: " + e.message);
+      }
+    }
+    function renderU(us) {
+      document.getElementById("usr-body").innerHTML = us.map(u =>
+        `<tr><td><code style="font-size:.72rem;color:var(--purple3)">${esc(u.telegram_id)}</code></td>`
+        + `<td>${esc(u.first_name || "")} ${esc(u.last_name || "")}</td>`
+        + `<td>${u.username ? "@" + esc(u.username) : "--"}</td>`
+        + `<td>${u.orders_count || 0}</td>`
+        + `<td>${fmt(u.total_spent || 0)}</td>`
+        + `<td>${fdate(u.created_at)}</td></tr>`
+      ).join("") || '<tr><td colspan="6" style="color:var(--text2)">Nenhum usuário</td></tr>';
+    }
+    function filterU() {
+      const q = document.getElementById("usrq").value.toLowerCase();
+      renderU(_uc.filter(u =>
+        (u.first_name || "").toLowerCase().includes(q) ||
+        (u.username || "").toLowerCase().includes(q) ||
+        String(u.telegram_id).includes(q)));
+    }
+
+    // ── LOJAS SAAS ────────────────────────────────────────────────────────────────
+    async function loadLojas(opts = {}) {
+      const page = "lojas";
+      const gen = opts.gen ?? _navGen;
+      const box = document.getElementById("tenants-list");
+      try {
+        box.innerHTML = loadSpin("Carregando lojas…");
+        const d = await api("/api/v1/tenants?limit=50");
+        if (!isPageActive(page) || gen !== _navGen) return;
+        const rows = d.rows || [];
+        if (!rows.length) {
+          box.innerHTML = '<div style="color:var(--text2)">Nenhuma loja SaaS. Use <code>/registrar_loja</code> no bot.</div>';
+          return;
+        }
+        box.innerHTML = rows.map(t => {
+          const vit = dashContext.siteBase ? `${dashContext.siteBase}/loja/${t.slug}` : `/loja/${t.slug}`;
+          return `<div class="tenant-card">
+            <h3>${t.active ? "✅" : "⏸️"} ${esc(t.name)}</h3>
+            <div class="meta">Slug: <code>${esc(t.slug)}</code> · Plano: <b>${esc(t.plan_label || t.plan)}</b><br>
+            Dono Telegram: <code>${esc(t.owner_telegram_id)}</code><br>
+            Vitrine: <code>${esc(vit)}</code></div>
+            <div class="tenant-acts">
+              <button class="btn-sm" onclick="selectTenant(${t.id}, '${escAttr(t.name)}')">📊 Ver dados</button>
+              <button class="btn-sm" onclick="setTenantPlan(${t.id}, 'pro')">⬆️ Pro</button>
+              <button class="btn-sm" onclick="setTenantPlan(${t.id}, 'business')">⬆️ Business</button>
+              <button class="btn-sm d" onclick="toggleTenant(${t.id}, ${t.active ? 0 : 1})">${t.active ? "Suspender" : "Ativar"}</button>
+            </div></div>`;
+        }).join("");
+        _loadedOnce.add(page);
+      } catch (e) {
+        if (!isPageActive(page)) return;
+        pageErr(box, e); toast("⚠️ " + e.message);
+      }
+    }
+
+    async function selectTenant(id, name) {
+      document.getElementById("tenant-sel").value = String(id);
+      await onTenantChange();
+      toast(`🏪 Filtrando: ${name}`);
+      document.querySelector('.ni[data-page="dashboard"]').click();
+    }
+
+    async function setTenantPlan(id, plan) {
+      try {
+        const exp = new Date(); exp.setMonth(exp.getMonth() + 1);
+        await fetch(`/api/v1/tenants/${id}`, {
+          method: "PUT", credentials: "include",
+          headers: csrfHeaders({ "Content-Type": "application/json" }),
+          body: JSON.stringify({ plan, active: 1, plan_expires_at: exp.toISOString() })
+        });
+        toast(`✅ Plano ${plan} aplicado`);
+        loadLojas();
+      } catch (e) { toast("⚠️ " + e.message); }
+    }
+
+    async function toggleTenant(id, active) {
+      try {
+        await fetch(`/api/v1/tenants/${id}`, {
+          method: "PUT", credentials: "include",
+          headers: csrfHeaders({ "Content-Type": "application/json" }),
+          body: JSON.stringify({ active })
+        });
+        toast(active ? "✅ Loja ativada" : "⏸️ Loja suspensa");
+        loadLojas();
+      } catch (e) { toast("⚠️ " + e.message); }
+    }
+
+    // ── CUPONS ────────────────────────────────────────────────────────────────────
+    async function loadCupons(opts = {}) {
+      const page = "cupons";
+      const gen = opts.gen ?? _navGen;
+      const body = document.getElementById("cup-body");
+      try {
+        body.innerHTML = `<tr><td colspan="5">${loadSpin()}</td></tr>`;
+        const d = await api("/api/v1/coupons").catch(() => []);
+        if (!isPageActive(page) || gen !== _navGen) return;
+        const cs = Array.isArray(d) ? d : (d.coupons || []);
+        body.innerHTML = cs.map(c =>
+          `<tr><td><code style="color:var(--purple3)">${esc(c.code)}</code></td>`
+          + `<td>${c.type === "percent" ? "%" : "R$"}</td>`
+          + `<td>${c.type === "percent" ? c.value + "%" : fmt(c.value)}</td>`
+          + `<td>${c.used || 0}/${c.max_uses || "∞"}</td>`
+          + `<td>${c.expires_at ? fdate(c.expires_at) : "Sem validade"}</td></tr>`
+        ).join("") || '<tr><td colspan="5" style="color:var(--text2)">Nenhum cupom</td></tr>';
+        _loadedOnce.add(page);
+      } catch (e) {
+        if (!isPageActive(page)) return;
+        body.innerHTML = `<tr><td colspan="5"><div class="page-load-msg page-load-err">⚠ ${esc(e.message)}</div></td></tr>`;
+        toast("⚠️ Erro cupons: " + e.message);
+      }
+    }
+
+    // ── ROUTER ────────────────────────────────────────────────────────────────────
+    const ops = () => (typeof HanorkOpsPanel !== "undefined" ? HanorkOpsPanel : null);
+    const OPS_PAGES = new Set(["operacoes", "telegram", "whatsapp", "grupos", "sistema", "crm"]);
+
+    function loadPage(p, opts = {}) {
+      const silent = opts.silent === true;
+      const force = opts.force === true;
+      const gen = opts.gen ?? _navGen;
+      const O = ops();
+      const pass = { silent, gen, force };
+
+      if (!force && !silent && _loadedOnce.has(p)) {
+        /* revisita sem force: não recarrega */
+        return;
+      }
+
+      if (p === "dashboard") {
+        loadDash({ silent, gen });
+        O?.refreshOpsStripOnly?.({ silent: true, allowStale: true }).catch(() => {});
+      } else if (OPS_PAGES.has(p)) {
+        Promise.resolve(O?.refreshOpsPage?.(p, pass)).then(() => {
+          if (isPageActive(p)) _loadedOnce.add(p);
+        }).catch(() => {});
+      } else if (p === "financeiro") loadFin(pass);
+      else if (p === "produtos") loadProds(pass);
+      else if (p === "pedidos") loadOrders(pass);
+      else if (p === "usuarios") loadUsers(pass);
+      else if (p === "cupons") loadCupons(pass);
+      else if (p === "lojas") loadLojas(pass);
+      if (typeof NecropolisGlyphs !== "undefined") {
+        requestAnimationFrame(() => NecropolisGlyphs.init());
+      }
+    }
+
+    function softRefresh() {
+      const p = activePage();
+      const O = ops();
+      if (p === "dashboard") {
+        loadDash({ silent: true });
+        O?.refreshOpsStripOnly?.({ silent: true, allowStale: true }).catch(() => {});
+      } else if (OPS_PAGES.has(p)) {
+        O?.refreshOpsPage?.(p, { silent: true, allowStale: true }).catch(() => {});
+      }
+    }
+
+    async function doRefresh() {
+      const p = activePage();
+      const gen = bumpNav();
+      _loadedOnce.clear();
+      await fetch("/api/dashboard/refresh", { method: "POST", credentials: "include", headers: csrfHeaders() }).catch(() => {});
+      loadPage(p, { force: true, gen });
+      toast("✅ Dados atualizados!");
+    }
+
+    let creaturesStarted = false;
+
+    function initCreatures() {
+      if (creaturesStarted) return;
+      const layoutEl = document.querySelector(".layout");
+      const screen = document.querySelector("#dragon-svg #screen");
+      const screenHybrid = document.querySelector("#dragon-svg #screen-hybrid");
+      const canvas = document.getElementById("centipede-canvas");
+      const canvasDragon = document.getElementById("centipede-dragon-canvas");
+      const legsCanvas = document.getElementById("dragon-centipede-legs");
+      if (!screen || !screenHybrid || !canvas || !canvasDragon || !legsCanvas) {
+        console.warn("[creatures] elementos do enxame não encontrados");
+        return;
+      }
+      if (typeof window.initCreatureSwarm !== "function") {
+        console.warn("[creatures] partner-cursors.js não carregou");
+        return;
+      }
+      try {
+        const swarm = window.initCreatureSwarm({
+          boundsEl: layoutEl,
+          maxCursorFraction: 0.1,
+          dragonScreen: screen,
+          dragonHybridScreen: screenHybrid,
+          centipedeCanvas: canvas,
+          centipedeDragonCanvas: canvasDragon,
+          dragonCentipedeLegsCanvas: legsCanvas,
+        });
+        if (!swarm) {
+          console.warn("[creatures] initCreatureSwarm retornou vazio");
+          return;
+        }
+        creaturesStarted = true;
+        document.getElementById("creatures-site")?.classList.add("ready");
+      } catch (e) {
+        console.error("[creatures]", e);
+      }
+    }
+
+    // ── INIT — painel visível rápido; dados carregam em segundo plano ─────────────
+    function startApp() {
+      hideLoading();
+      tickClock();
+      setInterval(tickClock, 1000);
+
+      const forceHide = setTimeout(hideLoading, 2000);
+
+      (async () => {
+        try {
+          await loadTenantSelector();
+          await loadDash();
+        } catch (e) {
+          console.error("[boot]", e);
+          toast("Não foi possível carregar todos os dados. Tente Atualizar.");
+        } finally {
+          clearTimeout(forceHide);
+          hideLoading();
+        }
+      })();
+
+      initCreatures();
+      requestAnimationFrame(initCreatures);
+      window.addEventListener("load", initCreatures);
+
+      initMobileNav();
+      ops()?.prefetchOps?.();
+      if (typeof NecropolisGlyphs !== "undefined") NecropolisGlyphs.init();
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeProdModal();
+      });
+      setInterval(softRefresh, 45000);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", startApp);
+    } else {
+      startApp();
+    }
+
+    setTimeout(hideLoading, 3000);
+  </script>
+</body>
+
+</html>

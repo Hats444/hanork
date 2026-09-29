@@ -1,0 +1,36 @@
+{
+  "$schema": "internal/wa-sessions-v1",
+  "version": 1,
+  "description": "Dual-WA Fase 1 — wa_a = produção atual; wa_b = 2º número (IPC/sessão isolados).",
+  "sessions": {
+    "wa_a": {
+      "ipcDir": "shared/zero-ipc",
+      "sessionDir": null,
+      "phone": "5521995930864",
+      "role": "primary",
+      "statusOnly": false,
+      "label": "WA 1 (primário)",
+      "displayName": "WA 1"
+    },
+    "wa_b": {
+      "ipcDir": "shared/zero-ipc-b",
+      "sessionDir": "~/.zero-divu-b",
+      "phone": "5491178918887",
+      "role": "secondary",
+      "statusOnly": true,
+      "label": "WA 2 (secundário)",
+      "displayName": "WA 2"
+    }
+  },
+  "groupAssignment": {
+    "mode": "exclusive",
+    "wa_a": [],
+    "wa_b": []
+  },
+  "notes": [
+    "wa_a usa credenciais em zero-divu/database/session (legado — não migrar).",
+    "wa_b: ~/.zero-divu-b/session + zero-divu.db isolados.",
+    "Ativar 2º worker: WA_DUAL_ENABLED=1 no .env + hanork-restart.",
+    "Conectar wa_b: /wa2_conectar · /wa2_pair · /wa2_novo_qr · /wa2_status"
+  ]
+}

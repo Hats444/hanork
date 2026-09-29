@@ -1,0 +1,202 @@
+[
+  {
+    "id": "telegram-sms",
+    "headline": "Número SMS Telegram: criar conta ou recuperar acesso sem usar seu chip pessoal",
+    "tgBody": "Precisa de número virtual para Telegram?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Telegram, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: criar conta ou recuperar acesso sem usar seu chip pessoal.",
+    "waBody": "NÚMEROS SMS — TELEGRAM\n\ncriar conta ou recuperar acesso sem usar seu chip pessoal.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 1
+  },
+  {
+    "id": "whatsapp-sms",
+    "headline": "Número SMS WhatsApp: validar número novo ou conta secundária com SMS real",
+    "tgBody": "Precisa de número virtual para WhatsApp?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço WhatsApp, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: validar número novo ou conta secundária com SMS real.",
+    "waBody": "NÚMEROS SMS — WHATSAPP\n\nvalidar número novo ou conta secundária com SMS real.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 2
+  },
+  {
+    "id": "instagram-sms",
+    "headline": "Número SMS Instagram: confirmar cadastro ou login com número descartável",
+    "tgBody": "Precisa de número virtual para Instagram?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Instagram, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: confirmar cadastro ou login com número descartável.",
+    "waBody": "NÚMEROS SMS — INSTAGRAM\n\nconfirmar cadastro ou login com número descartável.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 3
+  },
+  {
+    "id": "google-sms",
+    "headline": "Número SMS Google / Gmail: verificação em duas etapas ou conta nova",
+    "tgBody": "Precisa de número virtual para Google / Gmail?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Google / Gmail, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: verificação em duas etapas ou conta nova.",
+    "waBody": "NÚMEROS SMS — GOOGLE / GMAIL\n\nverificação em duas etapas ou conta nova.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 4
+  },
+  {
+    "id": "discord-sms",
+    "headline": "Número SMS Discord: ativar conta ou trocar número vinculado",
+    "tgBody": "Precisa de número virtual para Discord?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Discord, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: ativar conta ou trocar número vinculado.",
+    "waBody": "NÚMEROS SMS — DISCORD\n\nativar conta ou trocar número vinculado.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 5
+  },
+  {
+    "id": "tiktok-sms",
+    "headline": "Número SMS TikTok: registrar perfil comercial sem expor linha principal",
+    "tgBody": "Precisa de número virtual para TikTok?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço TikTok, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: registrar perfil comercial sem expor linha principal.",
+    "waBody": "NÚMEROS SMS — TIKTOK\n\nregistrar perfil comercial sem expor linha principal.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 6
+  },
+  {
+    "id": "facebook-sms",
+    "headline": "Número SMS Facebook / Meta: confirmar identidade ou página com SMS",
+    "tgBody": "Precisa de número virtual para Facebook / Meta?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Facebook / Meta, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: confirmar identidade ou página com SMS.",
+    "waBody": "NÚMEROS SMS — FACEBOOK / META\n\nconfirmar identidade ou página com SMS.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 7
+  },
+  {
+    "id": "twitter-sms",
+    "headline": "Número SMS Twitter / X: validar perfil ou recuperar acesso",
+    "tgBody": "Precisa de número virtual para Twitter / X?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Twitter / X, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: validar perfil ou recuperar acesso.",
+    "waBody": "NÚMEROS SMS — TWITTER / X\n\nvalidar perfil ou recuperar acesso.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 8
+  },
+  {
+    "id": "paypal-sms",
+    "headline": "Número SMS PayPal: confirmação de segurança em conta de pagamentos",
+    "tgBody": "Precisa de número virtual para PayPal?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço PayPal, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: confirmação de segurança em conta de pagamentos.",
+    "waBody": "NÚMEROS SMS — PAYPAL\n\nconfirmação de segurança em conta de pagamentos.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 9
+  },
+  {
+    "id": "uber-sms",
+    "headline": "Número SMS Uber / 99: cadastro de motorista ou passageiro com número temporário",
+    "tgBody": "Precisa de número virtual para Uber / 99?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Uber / 99, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: cadastro de motorista ou passageiro com número temporário.",
+    "waBody": "NÚMEROS SMS — UBER / 99\n\ncadastro de motorista ou passageiro com número temporário.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 10
+  },
+  {
+    "id": "ifood-sms",
+    "headline": "Número SMS iFood / delivery: criar conta promocional ou cupom novo usuário",
+    "tgBody": "Precisa de número virtual para iFood / delivery?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço iFood / delivery, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: criar conta promocional ou cupom novo usuário.",
+    "waBody": "NÚMEROS SMS — IFOOD / DELIVERY\n\ncriar conta promocional ou cupom novo usuário.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 11
+  },
+  {
+    "id": "binance-sms",
+    "headline": "Número SMS Binance / exchanges: 2FA ou cadastro em exchange com número dedicado",
+    "tgBody": "Precisa de número virtual para Binance / exchanges?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Binance / exchanges, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: 2FA ou cadastro em exchange com número dedicado.",
+    "waBody": "NÚMEROS SMS — BINANCE / EXCHANGES\n\n2FA ou cadastro em exchange com número dedicado.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 12
+  },
+  {
+    "id": "steam-sms",
+    "headline": "Número SMS Steam / games: verificação de conta gamer sem chip físico",
+    "tgBody": "Precisa de número virtual para Steam / games?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Steam / games, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: verificação de conta gamer sem chip físico.",
+    "waBody": "NÚMEROS SMS — STEAM / GAMES\n\nverificação de conta gamer sem chip físico.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 13
+  },
+  {
+    "id": "amazon-sms",
+    "headline": "Número SMS Amazon: confirmar pedido ou conta marketplace",
+    "tgBody": "Precisa de número virtual para Amazon?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Amazon, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: confirmar pedido ou conta marketplace.",
+    "waBody": "NÚMEROS SMS — AMAZON\n\nconfirmar pedido ou conta marketplace.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 14
+  },
+  {
+    "id": "linkedin-sms",
+    "headline": "Número SMS LinkedIn: perfil profissional ou recrutamento com SMS",
+    "tgBody": "Precisa de número virtual para LinkedIn?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço LinkedIn, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: perfil profissional ou recrutamento com SMS.",
+    "waBody": "NÚMEROS SMS — LINKEDIN\n\nperfil profissional ou recrutamento com SMS.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 15
+  },
+  {
+    "id": "snapchat-sms",
+    "headline": "Número SMS Snapchat: registro rápido para campanhas",
+    "tgBody": "Precisa de número virtual para Snapchat?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Snapchat, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: registro rápido para campanhas.",
+    "waBody": "NÚMEROS SMS — SNAPCHAT\n\nregistro rápido para campanhas.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 16
+  },
+  {
+    "id": "netflix-sms",
+    "headline": "Número SMS Streaming: trial ou conta compartilhada com verificação SMS",
+    "tgBody": "Precisa de número virtual para Streaming?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Streaming, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: trial ou conta compartilhada com verificação SMS.",
+    "waBody": "NÚMEROS SMS — STREAMING\n\ntrial ou conta compartilhada com verificação SMS.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 17
+  },
+  {
+    "id": "nubank-sms",
+    "headline": "Número SMS Bancos digitais: cadastro em fintech com número Virtuo (quando permitido)",
+    "tgBody": "Precisa de número virtual para Bancos digitais?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Bancos digitais, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: cadastro em fintech com número Virtuo (quando permitido).",
+    "waBody": "NÚMEROS SMS — BANCOS DIGITAIS\n\ncadastro em fintech com número Virtuo (quando permitido).\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 18
+  },
+  {
+    "id": "shopify-sms",
+    "headline": "Número SMS Shopify / lojas: validar loja ou checkout internacional",
+    "tgBody": "Precisa de número virtual para Shopify / lojas?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Shopify / lojas, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: validar loja ou checkout internacional.",
+    "waBody": "NÚMEROS SMS — SHOPIFY / LOJAS\n\nvalidar loja ou checkout internacional.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 19
+  },
+  {
+    "id": "airbnb-sms",
+    "headline": "Número SMS Airbnb / viagens: confirmar reserva ou anfitrião",
+    "tgBody": "Precisa de número virtual para Airbnb / viagens?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Airbnb / viagens, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: confirmar reserva ou anfitrião.",
+    "waBody": "NÚMEROS SMS — AIRBNB / VIAGENS\n\nconfirmar reserva ou anfitrião.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 20
+  },
+  {
+    "id": "signal-sms",
+    "headline": "Número SMS Signal / privacidade: número alternativo para apps focados em privacidade",
+    "tgBody": "Precisa de número virtual para Signal / privacidade?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Signal / privacidade, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: número alternativo para apps focados em privacidade.",
+    "waBody": "NÚMEROS SMS — SIGNAL / PRIVACIDADE\n\nnúmero alternativo para apps focados em privacidade.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 21
+  },
+  {
+    "id": "microsoft-sms",
+    "headline": "Número SMS Microsoft / Outlook: conta corporativa ou pessoal com SMS",
+    "tgBody": "Precisa de número virtual para Microsoft / Outlook?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Microsoft / Outlook, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: conta corporativa ou pessoal com SMS.",
+    "waBody": "NÚMEROS SMS — MICROSOFT / OUTLOOK\n\nconta corporativa ou pessoal com SMS.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 22
+  },
+  {
+    "id": "apple-sms",
+    "headline": "Número SMS Apple ID: verificação em dispositivo ou iCloud",
+    "tgBody": "Precisa de número virtual para Apple ID?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Apple ID, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: verificação em dispositivo ou iCloud.",
+    "waBody": "NÚMEROS SMS — APPLE ID\n\nverificação em dispositivo ou iCloud.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 23
+  },
+  {
+    "id": "multi-pais",
+    "headline": "Número SMS Multi-país: escolha país do número: BR, EUA, UK e outros disponíveis",
+    "tgBody": "Precisa de número virtual para Multi-país?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Multi-país, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: escolha país do número: BR, EUA, UK e outros disponíveis.",
+    "waBody": "NÚMEROS SMS — MULTI-PAÍS\n\nescolha país do número: BR, EUA, UK e outros disponíveis.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 24
+  },
+  {
+    "id": "virtuo-checkout",
+    "headline": "Número SMS Checkout Hanork: PIX ou cartão, código SMS entregue no privado após pagamento",
+    "tgBody": "Precisa de número virtual para Checkout Hanork?\n\nNo Hanork você compra números SMS (Virtuo) direto no bot: escolha o país, selecione o serviço Checkout Hanork, pague com PIX ou cartão e receba o código no privado assim que o provedor liberar.\n\nSem chip físico, sem expor sua linha principal. Histórico de pedidos, suporte com /suporte e crédito na carteira se a ativação falhar após pagamento confirmado.\n\nIdeal para: PIX ou cartão, código SMS entregue no privado após pagamento.",
+    "waBody": "NÚMEROS SMS — CHECKOUT HANORK\n\nPIX ou cartão, código SMS entregue no privado após pagamento.\n\nCompre no @hanork_bot: país + serviço + PIX ou cartão.\nCódigo entregue no privado. Suporte: /suporte",
+    "image_file": "virtuo_01.jpg",
+    "slot": 25
+  }
+]

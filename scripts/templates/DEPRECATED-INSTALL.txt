@@ -1,0 +1,7 @@
+# Instalação antiga — NÃO USAR
+
+Esta pasta não é a produção ativa do Hanork.
+
+**Produção:** `/home/vendetta/hanork`
+
+Mantida apenas como referência histórica. Pode ser removida quando confirmar que não precisa mais.

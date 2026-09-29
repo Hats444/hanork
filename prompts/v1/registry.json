@@ -1,0 +1,7 @@
+{
+  "version": "v1",
+  "prompts": {
+    "planner.system": "planner.system.txt",
+    "planner.rules": "planner.rules.txt"
+  }
+}

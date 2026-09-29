@@ -1,0 +1,522 @@
+[
+  {
+    "id": "nocturno",
+    "headline": "Hanork PRO v3.0: loja no Telegram que vende enquanto você descansa",
+    "tgBody": "O Hanork PRO é uma plataforma de loja digital para Telegram. O cliente abre o bot no privado, navega pelo catálogo com fotos e descrições, monta o pedido e paga por PIX ou Mercado Pago.\n\nQuando o gateway confirma o pagamento, o sistema libera automaticamente o arquivo, link ou texto configurado para aquele produto. Você não precisa copiar chave PIX, aguardar comprovante nem reenviar manualmente cada pedido.\n\nO pacote inclui painel /admin no Telegram, dashboard web, controle de estoque digital, relatórios de vendas e módulo de divulgação que atualiza a mesma mensagem no grupo, evitando flood.",
+    "waBody": "HANORK PRO v3.0\n\nBot de loja digital completo para Telegram.\n\nO cliente compra no privado: catálogo, carrinho, PIX ou Mercado Pago e recebe o produto digital automaticamente após confirmação do pagamento.\n\nInclui painel /admin, dashboard web, controle de pedidos e divulgação inteligente no grupo.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Automação completa de vendas",
+    "image_features": [
+      "Catálogo com fotos, preço e botão de compra",
+      "PIX e Mercado Pago com confirmação automática",
+      "Entrega de ZIP, link ou texto após pagamento",
+      "Painel /admin e dashboard web inclusos",
+      "Divulgação no grupo sem flood de mensagens"
+    ],
+    "image_bottom": "SUA LOJA TRABALHA 24 HORAS NO TELEGRAM",
+    "price": "R$ 297,90",
+    "accent": [
+      148,
+      110,
+      255
+    ],
+    "slot": 1
+  },
+  {
+    "id": "sombra",
+    "headline": "Divulgue no grupo, converta no privado com checkout profissional",
+    "tgBody": "A estratégia do Hanork PRO separa divulgação de conversão. O anúncio aparece no grupo ou canal com foto e texto comercial. O cliente clica, abre o bot no privado e finaliza a compra em ambiente limpo, sem expor dados de pagamento no chat coletivo.\n\nO checkout suporta carrinho com múltiplos itens, cupom de desconto e geração de PIX com QR Code direto no Telegram. Após pagamento aprovado, a entrega ocorre na mesma conversa.\n\nResultado: grupo organizado, menos atrito na compra e operação com aparência profissional para infoprodutos, packs e licenças digitais.",
+    "waBody": "HANORK PRO\n\nDivulgação no grupo, venda no privado.\n\nO cliente clica no anúncio, abre o bot, escolhe o produto, paga com PIX ou cartão e recebe sozinho.\n\nCarrinho, cupom e checkout integrados. Sem chave PIX manual.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Checkout no privado do cliente",
+    "image_features": [
+      "Anúncio no grupo, compra no privado",
+      "Carrinho com múltiplos produtos",
+      "Cupom de desconto configurável",
+      "PIX com QR Code dentro do bot",
+      "Grupo limpo, conversão no privado"
+    ],
+    "image_bottom": "CONVERSÃO PROFISSIONAL NO TELEGRAM",
+    "price": "R$ 297,90",
+    "accent": [
+      180,
+      140,
+      255
+    ],
+    "slot": 2
+  },
+  {
+    "id": "rosas-negras",
+    "headline": "Catálogo, cupom, flash sale e afiliados em um só sistema",
+    "tgBody": "O Hanork PRO v3.0 reúne recursos de e-commerce que normalmente exigem várias ferramentas. Você cadastra produtos com capa, descrição, preço e tipo de entrega. Cria cupons percentuais ou fixos. Programa ofertas relâmpago com timer visível para o cliente.\n\nO módulo de afiliados gera links rastreados e calcula comissões. O CRM registra histórico de compras por cliente. Tudo configurável pelo /admin, sem editar código.\n\nIndicado para quem quer sair da venda artesanal no Telegram e operar com estrutura de loja madura.",
+    "waBody": "HANORK PRO v3.0\n\nLoja Telegram com catálogo multi produto, cupom, flash sale com timer, afiliados com comissão e CRM de clientes.\n\nCadastre produtos pelo painel /admin e deixe o bot vender.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "E-commerce completo no Telegram",
+    "image_features": [
+      "Catálogo multi produto com categorias",
+      "Cupom percentual ou valor fixo",
+      "Flash sale com contagem regressiva",
+      "Afiliados com link e comissão",
+      "CRM com histórico de compras"
+    ],
+    "image_bottom": "RECURSOS DE LOJA PROFISSIONAL",
+    "price": "R$ 297,90",
+    "accent": [
+      200,
+      100,
+      160
+    ],
+    "slot": 3
+  },
+  {
+    "id": "lua-sangue",
+    "headline": "PIX e Mercado Pago com webhook e entrega automática",
+    "tgBody": "No Hanork PRO você configura uma vez as credenciais do Mercado Pago no arquivo .env. O bot gera cobrança PIX com QR Code ou aceita cartão conforme sua configuração. O webhook recebe a confirmação em tempo real e dispara a entrega.\n\nA entrega suporta três formatos: arquivo ZIP anexado, link externo ou mensagem de texto com instruções. O sistema valida se o pedido já foi entregue para evitar duplicidade.\n\nO pacote de instalação é entregue sanitizado, sem tokens ou dados de outro vendedor. Você insere apenas suas credenciais.",
+    "waBody": "HANORK PRO\n\nPagamento integrado com Mercado Pago: PIX com confirmação automática e cartão de crédito.\n\nWebhook confirma o pagamento e o bot entrega ZIP, link ou texto na hora.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "PIX e Mercado Pago integrados",
+    "image_features": [
+      "PIX com QR Code no bot",
+      "Cartão via Mercado Pago",
+      "Webhook confirma em tempo real",
+      "Entrega ZIP, link ou texto",
+      "Pacote limpo, só suas credenciais"
+    ],
+    "image_bottom": "PAGAMENTO E ENTREGA AUTOMÁTICOS",
+    "price": "R$ 297,90",
+    "accent": [
+      220,
+      80,
+      110
+    ],
+    "slot": 4
+  },
+  {
+    "id": "corvo",
+    "headline": "Cada venda entregue sozinha: sem comprovante e sem reenvio",
+    "tgBody": "Na venda manual você perde tempo conferindo print, buscando o arquivo e respondendo um a um. No Hanork PRO o fluxo é fechado dentro do bot: pedido criado, pagamento confirmado, entrega executada e status atualizado no painel.\n\nO estoque digital é decrementado automaticamente. Pedidos ficam registrados com data, valor, produto e ID do comprador. Relatórios mostram faturamento por período.\n\nVocê acompanha a operação pelo /admin ou dashboard web e intervém apenas quando quiser, não porque é obrigatório.",
+    "waBody": "HANORK PRO v3.0\n\nO bot registra o pedido, confirma o pagamento e entrega o produto sem você no meio do processo.\n\nControle de estoque digital, histórico de vendas e relatórios no painel.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Entrega digital sem retrabalho",
+    "image_features": [
+      "Pedido, pagamento e entrega no bot",
+      "Estoque digital automático",
+      "Proteção contra envio duplicado",
+      "Histórico completo de vendas",
+      "Relatórios por período"
+    ],
+    "image_bottom": "ENTREGA AUTOMÁTICA DE PRODUTOS DIGITAIS",
+    "price": "R$ 297,90",
+    "accent": [
+      130,
+      160,
+      220
+    ],
+    "slot": 5
+  },
+  {
+    "id": "catedral",
+    "headline": "Infraestrutura de produção: Redis, filas e dashboard web",
+    "tgBody": "O Hanork PRO v3.0 foi construído para operação real, não para demonstração. Redis gerencia cache, locks distribuídos e filas de processamento. Bull processa entregas e notificações em background sem travar o bot.\n\nO dashboard web exibe pedidos, produtos, métricas e status do sistema. Alertas operacionais avisam falhas de entrega ou pagamento pendente. Auditoria registra ações administrativas.\n\nPara quem vende volume ou planeja escalar, a arquitetura já está pronta. Suporte opcional a modelo multi-loja SaaS.",
+    "waBody": "HANORK PRO v3.0\n\nArquitetura profissional com Redis, filas de processamento e dashboard web.\n\nEntregas assíncronas, locks contra duplicidade e alertas operacionais.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Stack profissional para produção",
+    "image_features": [
+      "Redis para cache e locks",
+      "Filas Bull para entregas",
+      "Dashboard web de gestão",
+      "Alertas e auditoria operacional",
+      "Suporte opcional multi-loja SaaS"
+    ],
+    "image_bottom": "INFRAESTRUTURA SÓLIDA PARA SUA LOJA",
+    "price": "R$ 297,90",
+    "accent": [
+      180,
+      150,
+      255
+    ],
+    "slot": 6
+  },
+  {
+    "id": "veneno",
+    "headline": "Configure uma vez: catálogo, PIX e entrega rodando todo dia",
+    "tgBody": "Após instalar o Hanork PRO no seu servidor e configurar o .env com token do bot e credenciais de pagamento, o trabalho operacional diário praticamente desaparece. Cadastre produtos com preço e arquivo de entrega. O bot faz o resto.\n\nO guia CLIENTE.md em português cobre instalação Node.js, banco SQLite, Redis, primeiro produto e teste de compra. Em poucas horas você valida o fluxo completo.\n\nIdeal para quem hoje perde horas respondendo compradores com a mesma pergunta e o mesmo passo a passo.",
+    "waBody": "HANORK PRO\n\nInstale, configure o .env e cadastre seus produtos. O bot atende, cobra e entrega todos os dias.\n\nGuia CLIENTE.md em português com passo a passo de instalação e primeiro teste de venda.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Fim da venda manual",
+    "image_features": [
+      "Configuração única no .env",
+      "Catálogo e preços pelo admin",
+      "Operação diária automática",
+      "Guia CLIENTE.md em português",
+      "Teste de compra documentado"
+    ],
+    "image_bottom": "CONFIGURE UMA VEZ, VENDA TODO DIA",
+    "price": "R$ 297,90",
+    "accent": [
+      120,
+      200,
+      140
+    ],
+    "slot": 7
+  },
+  {
+    "id": "necropole",
+    "headline": "Venda curso, pack, bot, método ou licença no mesmo catálogo",
+    "tgBody": "O Hanork PRO aceita qualquer produto digital entregue por arquivo, link ou mensagem. Cadastre um curso em PDF, um pack de fotos em ZIP, acesso a bot privado, licença de software ou assinatura com link de renovação.\n\nCada item tem capa, descrição, preço, estoque e tipo de entrega configuráveis. O cliente vê tudo no catálogo e compra pelo fluxo padrão.\n\nVocê controla campanhas, cupons e preços pelo admin sem depender de desenvolvedor para cada mudança.",
+    "waBody": "HANORK PRO v3.0\n\nUm catálogo para todos os seus digitais: curso, pack, bot, método, licença ou assinatura.\n\nEntrega por ZIP, link ou texto. Preço e promoções configuráveis pelo painel /admin.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Qualquer produto digital",
+    "image_features": [
+      "Curso, pack, bot ou licença",
+      "Entrega ZIP, link ou mensagem",
+      "Capa e descrição por produto",
+      "Estoque e preço configuráveis",
+      "Campanhas pelo painel admin"
+    ],
+    "image_bottom": "SUA LOJA DIGITAL NO TELEGRAM",
+    "price": "R$ 297,90",
+    "accent": [
+      170,
+      170,
+      190
+    ],
+    "slot": 8
+  },
+  {
+    "id": "crimson",
+    "headline": "Do clique no anúncio ao produto entregue em poucos minutos",
+    "tgBody": "O fluxo de compra do Hanork PRO foi desenhado para o hábito do comprador brasileiro no Telegram. Ele vê o anúncio, toca em comprar, abre o bot, confirma o produto, paga com PIX ou cartão e recebe o pacote.\n\nSem site externo, sem formulário longo e sem esperar você liberar manualmente. O link buy_1 leva direto ao checkout do Hanork PRO.\n\nQuanto menos etapas entre interesse e entrega, maior a taxa de conversão da sua oferta.",
+    "waBody": "HANORK PRO\n\nFluxo rápido: anúncio, bot, pagamento, entrega do produto.\n\nSem site externo e sem atendimento manual. O cliente conclui tudo dentro do Telegram.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Do anúncio à entrega em minutos",
+    "image_features": [
+      "Compra 100% dentro do Telegram",
+      "PIX ou cartão sem redirecionar",
+      "Produto entregue após confirmação",
+      "Link buy_1 direto ao checkout",
+      "Fluxo curto, mais conversão"
+    ],
+    "image_bottom": "COMPRA RÁPIDA E ENTREGA IMEDIATA",
+    "price": "R$ 297,90",
+    "accent": [
+      255,
+      70,
+      100
+    ],
+    "slot": 9
+  },
+  {
+    "id": "obsidiana",
+    "headline": "Código-fonte v3.0 completo: instale no seu servidor",
+    "tgBody": "Ao comprar o Hanork PRO você recebe o código-fonte integral da versão 3.0, não um SaaS com mensalidade. Instale em VPS ou servidor próprio, configure variáveis de ambiente e opere com suas taxas de gateway.\n\nO pacote inclui módulos de vendas, admin Telegram, dashboard web, afiliados, cashback, broadcast anti-flood, módulo SMM e integração opcional com WhatsApp via Zero Divu.\n\nO ativo fica com você. Atualize, customize e escale conforme seu negócio.",
+    "waBody": "HANORK PRO v3.0\n\nCódigo-fonte completo, pagamento único, sem mensalidade de plataforma.\n\nInclui vendas, admin, dashboard, afiliados, SMM e WhatsApp opcional.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Código-fonte completo v3.0",
+    "image_features": [
+      "Código-fonte integral incluso",
+      "Sem mensalidade de plataforma",
+      "Instalação na sua VPS",
+      "Módulo SMM e afiliados",
+      "Integração WhatsApp opcional"
+    ],
+    "image_bottom": "INVESTIMENTO ÚNICO, CÓDIGO SEU",
+    "price": "R$ 297,90",
+    "accent": [
+      100,
+      180,
+      255
+    ],
+    "slot": 10
+  },
+  {
+    "id": "espectro",
+    "headline": "Pedidos processados de madrugada sem você no chat",
+    "tgBody": "Com pagamento e entrega automatizados, o Hanork PRO continua vendendo quando você dorme, viaja ou está em outra tarefa. O cliente recebe respostas padrão do bot, gera PIX, paga e obtém o produto.\n\nCada pedido fica registrado para você revisar depois. Notificações podem avisar vendas em tempo real no Telegram do admin.\n\nPara quem busca renda com produtos digitais sem plantão permanente no celular.",
+    "waBody": "HANORK PRO\n\nA loja processa pedidos 24 horas. PIX confirmado, produto entregue, venda registrada.\n\nVocê revisa relatórios quando quiser. Automação real para quem não quer ficar preso no chat.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Vendas autônomas 24 horas",
+    "image_features": [
+      "Vendas sem presença online",
+      "PIX e entrega a qualquer hora",
+      "Pedidos registrados em tempo real",
+      "Notificação de venda ao admin",
+      "Escala sem plantão no chat"
+    ],
+    "image_bottom": "SUA LOJA TRABALHA POR VOCÊ",
+    "price": "R$ 297,90",
+    "accent": [
+      160,
+      180,
+      255
+    ],
+    "slot": 11
+  },
+  {
+    "id": "trono",
+    "headline": "Gerencie produtos, pedidos e campanhas pelo /admin",
+    "tgBody": "O Hanork PRO oferece dois pontos de gestão: comando /admin dentro do Telegram e dashboard web no navegador. Pelo admin você cadastra produto, altera preço, cria cupom, consulta pedido, configura afiliado e dispara broadcast.\n\nO dashboard mostra gráficos de vendas, produtos mais vendidos, status do sistema e fila de entregas. Tudo em português.\n\nControle operacional completo sem editar banco de dados manualmente.",
+    "waBody": "HANORK PRO v3.0\n\nGestão pelo /admin no Telegram e dashboard web no navegador.\n\nProdutos, pedidos, pagamentos, cupons, afiliados e relatórios em um só sistema.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Gestão completa da operação",
+    "image_features": [
+      "Comando /admin no Telegram",
+      "Dashboard web com gráficos",
+      "Cadastro de produtos e cupons",
+      "Consulta de pedidos e clientes",
+      "Relatórios de faturamento"
+    ],
+    "image_bottom": "CONTROLE TOTAL DA SUA LOJA",
+    "price": "R$ 297,90",
+    "accent": [
+      255,
+      190,
+      80
+    ],
+    "slot": 12
+  },
+  {
+    "id": "ritual",
+    "headline": "Fluxo do cliente em três etapas: abrir, pagar, receber",
+    "tgBody": "O Hanork PRO reduz o caminho até a compra.\n\nEtapa 1: cliente abre o bot e vê catálogo.\nEtapa 2: escolhe produto e paga com PIX ou cartão.\nEtapa 3: recebe automaticamente o digital na conversa.\n\nVocê não participa de nenhuma etapa. Isso elimina abandono por demora, erro de chave PIX ou arquivo enviado para pessoa errada.",
+    "waBody": "HANORK PRO\n\nTrês etapas para o cliente:\n1. Abre o bot e escolhe o produto\n2. Paga com PIX ou Mercado Pago\n3. Recebe o digital automaticamente\n\nVocê não entra no processo de cada venda.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Fluxo de compra em 3 passos",
+    "image_features": [
+      "Abrir bot e ver catálogo",
+      "Pagar PIX ou cartão no chat",
+      "Receber digital na conversa",
+      "Zero ação manual do vendedor",
+      "Menos abandono de compra"
+    ],
+    "image_bottom": "COMPRA SIMPLES, ENTREGA NA HORA",
+    "price": "R$ 297,90",
+    "accent": [
+      255,
+      150,
+      60
+    ],
+    "slot": 13
+  },
+  {
+    "id": "eclipse",
+    "headline": "R$ 297,90 pagamento único. Sem mensalidade de plataforma",
+    "tgBody": "Plataformas de loja cobram todo mês. O Hanork PRO é aquisição única: você paga R$ 297,90, recebe o pacote v3.0 completo e instala no seu ambiente. As únicas taxas recorrentes são as do gateway de pagamento que você já usaria de qualquer forma.\n\nO pacote inclui guia de instalação, 20 textos de divulgação, 20 capas, código-fonte e estrutura pronta para vender.\n\nCom poucas vendas o investimento se recupera. Depois, a margem fica com você.",
+    "waBody": "HANORK PRO v3.0\n\nR$ 297,90 pagamento único. Sem mensalidade de plataforma.\n\nPacote completo com código-fonte, guia em português, textos e imagens de divulgação.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Pagamento único, sem mensalidade",
+    "image_features": [
+      "R$ 297,90 aquisição única",
+      "Sem taxa mensal de plataforma",
+      "Código-fonte e guia inclusos",
+      "20 textos e 20 capas de divulgação",
+      "Margem fica com você"
+    ],
+    "image_bottom": "INVESTIMENTO QUE SE PAGA RÁPIDO",
+    "price": "R$ 297,90",
+    "accent": [
+      255,
+      210,
+      90
+    ],
+    "slot": 14
+  },
+  {
+    "id": "correntes",
+    "headline": "Broadcast que edita a mensagem em vez de spammar o grupo",
+    "tgBody": "O módulo de divulgação do Hanork PRO publica promoções em grupos e canais editando a mensagem anterior. O grupo não acumula dezenas de posts iguais. O anúncio permanece visível e atualizado com novo texto e imagem.\n\nCombinado com checkout no privado, você pode divulgar com frequência sem irritar membros. Rotação automática entre 20 variações de copy e arte.\n\nIntegração opcional com WhatsApp Status via Zero Divu para ampliar alcance além do Telegram.",
+    "waBody": "HANORK PRO\n\nDivulgação inteligente: edita a mesma mensagem no grupo em vez de criar spam.\n\nRotação de 20 textos e imagens. Checkout no privado. WhatsApp Status opcional.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Divulgação sem flood no grupo",
+    "image_features": [
+      "Edita mensagem, não cria spam",
+      "Rotação de 20 textos e capas",
+      "Grupo limpo e anúncio visível",
+      "Checkout no privado",
+      "WhatsApp Status opcional"
+    ],
+    "image_bottom": "DIVULGUE SEM POLUIR O GRUPO",
+    "price": "R$ 297,90",
+    "accent": [
+      190,
+      160,
+      255
+    ],
+    "slot": 15
+  },
+  {
+    "id": "abismo",
+    "headline": "Módulo SMM integrado: venda engajamento no mesmo bot",
+    "tgBody": "Além da loja de produtos digitais, o Hanork PRO inclui módulo SMM para revenda de seguidores, curtidas e visualizações. Instagram, TikTok, YouTube e Telegram disponíveis no catálogo.\n\nO cliente escolhe plataforma, serviço, informa o link, paga com PIX ou cartão e acompanha o pedido no privado. Entrega automática após confirmação do pagamento.\n\nUma operação, dois fluxos de receita: produtos digitais e serviços de engajamento.",
+    "waBody": "HANORK PRO v3.0\n\nLoja digital e módulo SMM no mesmo bot.\n\nSeguidores, curtidas e views para Instagram, TikTok, YouTube e Telegram.\n\nPIX, cartão e entrega automática.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Loja + SMM integrados",
+    "image_features": [
+      "Catálogo SMM multi plataforma",
+      "Seguidores, curtidas e views",
+      "PIX e cartão no mesmo bot",
+      "Entrega automática de pedidos",
+      "Dois fluxos de receita"
+    ],
+    "image_bottom": "LOJA E ENGAJAMENTO NUM SÓ SISTEMA",
+    "price": "R$ 297,90",
+    "accent": [
+      150,
+      110,
+      255
+    ],
+    "slot": 16
+  },
+  {
+    "id": "brasas",
+    "headline": "Integração WhatsApp: amplie a divulgação além do Telegram",
+    "tgBody": "O Hanork PRO oferece integração opcional com WhatsApp via Zero Divu. Publique status com link da loja, receba notificações de venda e mantenha presença em dois canais sem duplicar trabalho manual.\n\nNo Telegram, o broadcast anti-flood continua editando a mesma mensagem no grupo. No WhatsApp, o status direciona tráfego para o bot com checkout no privado.\n\nIdeal para quem já tem audiência nos dois apps e quer centralizar vendas no Hanork.",
+    "waBody": "HANORK PRO v3.0\n\nIntegração WhatsApp opcional via Zero Divu.\n\nStatus com link da loja, notificações de venda e checkout centralizado no bot.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Telegram + WhatsApp integrados",
+    "image_features": [
+      "Integração WhatsApp via Zero Divu",
+      "Status com link da loja",
+      "Notificações de venda",
+      "Broadcast anti-flood no Telegram",
+      "Checkout centralizado no bot"
+    ],
+    "image_bottom": "PRESENÇA EM DOIS CANAIS, UMA LOJA",
+    "price": "R$ 297,90",
+    "accent": [
+      255,
+      120,
+      50
+    ],
+    "slot": 17
+  },
+  {
+    "id": "reliquia",
+    "headline": "Segurança operacional: locks, auditoria e pacote sanitizado",
+    "tgBody": "O Hanork PRO v3.0 foi hardened para produção. Redis com locks distribuídos impede entrega duplicada em picos de vendas. Auditoria registra ações administrativas. Webhooks validam confirmação de pagamento antes de liberar produto.\n\nO pacote é entregue sanitizado, sem tokens ou credenciais de terceiros. Você configura apenas suas chaves no .env.\n\nOperação segura para quem não pode arriscar vazamento de arquivo ou cobrança sem entrega.",
+    "waBody": "HANORK PRO v3.0\n\nLocks Redis, auditoria e webhook de pagamento.\n\nPacote sanitizado, sem credenciais de terceiros. Proteção contra entrega duplicada.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Segurança para produção",
+    "image_features": [
+      "Locks Redis contra duplicidade",
+      "Auditoria de ações admin",
+      "Webhook valida pagamento",
+      "Pacote sanitizado na entrega",
+      "Proteção em pico de vendas"
+    ],
+    "image_bottom": "OPERAÇÃO SEGURA E CONFIÁVEL",
+    "price": "R$ 297,90",
+    "accent": [
+      220,
+      170,
+      90
+    ],
+    "slot": 18
+  },
+  {
+    "id": "pacto",
+    "headline": "Aguenta volume: filas, Redis e entregas em background",
+    "tgBody": "Quando vários clientes compram ao mesmo tempo, sistemas fracos travam ou entregam duplicado. O Hanork PRO usa filas Bull para processar entregas em background e Redis para locks que impedem condição de corrida.\n\nPagamentos confirmados entram na fila, entregas executam em ordem e falhas podem ser reprocessadas. O bot continua respondendo outros clientes durante o pico.\n\nArquitetura pensada para escalar, não apenas para testar.",
+    "waBody": "HANORK PRO v3.0\n\nFilas de processamento e Redis para aguentar pico de vendas.\n\nEntregas em background, proteção contra duplicidade e bot responsivo com múltiplos compradores.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Preparado para escalar",
+    "image_features": [
+      "Filas Bull em background",
+      "Redis com locks distribuídos",
+      "Múltiplos pedidos simultâneos",
+      "Reprocessamento de falhas",
+      "Bot responsivo em pico"
+    ],
+    "image_bottom": "ESCALE SEM REESCREVER O SISTEMA",
+    "price": "R$ 297,90",
+    "accent": [
+      190,
+      100,
+      200
+    ],
+    "slot": 19
+  },
+  {
+    "id": "oraculo",
+    "headline": "Hanork PRO v3.0: loja automática madura em produção",
+    "tgBody": "O Hanork PRO reúne em um pacote o que operadores brasileiros usam no dia a dia: checkout Telegram, PIX e Mercado Pago, entrega automática, /admin, dashboard web, afiliados, anti-flood, CRM, módulo SMM, integração WhatsApp e filas Redis.\n\nVersão 3.0 hardened, testada em produção, com guia em português e código-fonte entregue no ato da compra.\n\nPara quem quer profissionalizar a venda de digitais no Telegram de forma definitiva.",
+    "waBody": "HANORK PRO v3.0\n\nLoja automática completa: pagamento, entrega, admin, dashboard, SMM, WhatsApp e material de divulgação.\n\nVersão 3.0 em produção. Código-fonte e guia em português inclusos.",
+    "image_file": "hanork_01.jpg",
+    "image_title": "HANORK PRO",
+    "image_subtitle": "Loja automática completa v3.0",
+    "image_features": [
+      "Checkout, PIX e Mercado Pago",
+      "Entrega automática de digitais",
+      "Admin, dashboard e módulo SMM",
+      "20 textos e capas de divulgação",
+      "v3.0 madura em produção"
+    ],
+    "image_bottom": "A LOJA AUTOMÁTICA QUE VOCÊ PROCURAVA",
+    "price": "R$ 297,90",
+    "accent": [
+      110,
+      200,
+      255
+    ],
+    "slot": 20
+  },
+  {
+    "id": "carteira-hanork",
+    "headline": "Carteira Hanork: crédito reutilizável quando PIX ou API falha",
+    "tgBody": "Falha no gateway, timeout do provedor SMM ou indisponibilidade momentânea da API Virtuo não precisam travar a operação.\n\nA Carteira Hanork credita automaticamente o valor pago quando a entrega não conclui. O cliente usa o saldo em nova tentativa ou em outro produto do catálogo, sem abrir ticket manual para cada caso.\n\nVocê reduz chargeback informal, mantém confiança e evita reembolso manual repetido. Tudo registrado no histórico do pedido e visível no painel /admin.",
+    "waBody": "HANORK PRO — Carteira integrada\n\nSe PIX, SMM ou números Virtuo falharem após pagamento, o valor vira crédito reutilizável na loja.\n\nMenos estorno manual, mais confiança do cliente e operação contínua.",
+    "image_file": "hanork_01.jpg",
+    "slot": 21
+  },
+  {
+    "id": "multi-admin",
+    "headline": "Dois admins no Telegram com logs separados por bot",
+    "tgBody": "Operação com sócio ou equipe exige controle de acesso.\n\nO Hanork PRO suporta múltiplos IDs de administrador no painel /admin. Notificações de atividade podem ir para um bot dedicado, enquanto alertas de novo membro chegam pelo bot principal — sem misturar flood de log com conversão.\n\nIdeal para quem escala suporte e vendas mantendo visibilidade do que acontece na loja em tempo real.",
+    "waBody": "HANORK PRO — Multi-admin\n\nDois ou mais admins no /admin. Logs de operação e alertas de novo cliente configuráveis.\n\nEscala equipe sem perder controle da loja.",
+    "image_file": "hanork_01.jpg",
+    "slot": 22
+  },
+  {
+    "id": "wa-blast-fix",
+    "headline": "Blast WhatsApp corrigido: 1 post por grupo, sem rajada",
+    "tgBody": "Divulgação em massa no WhatsApp exige disciplina anti-ban.\n\nO módulo Zero Divu do Hanork usa lock global, cooldown por grupo e pausa do scheduler durante blast personalizado. Cada grupo recebe no máximo um post por sessão, com delay entre grupos.\n\nCombine textos profissionais (25 variantes Hanork) com foto principal pareada e rotação automática nos Status — sem repetir 6 posts na mesma hora.",
+    "waBody": "HANORK PRO + WhatsApp\n\nBlast com 1 post/grupo, cooldown e fila inteligente.\n\n25 textos Hanork + foto principal. Divulgação que respeita o grupo.",
+    "image_file": "hanork_01.jpg",
+    "slot": 23
+  },
+  {
+    "id": "restock-flash",
+    "headline": "Restock, flash sale e fila de espera no mesmo fluxo",
+    "tgBody": "Produto esgotado não precisa significar venda perdida.\n\nConfigure alerta de restock, oferta relâmpago com timer e mensagem automática quando o estoque volta. O cliente que clicou em avise-me recebe push no privado.\n\nFlash sale com preço promocional visível, contagem regressiva e checkout imediato — tudo integrado ao carrinho e ao PIX automático.",
+    "waBody": "HANORK PRO — Restock + Flash\n\nAvise-me quando voltar, oferta relâmpago com timer e checkout PIX.\n\nRecupere vendas de produto esgotado.",
+    "image_file": "hanork_01.jpg",
+    "slot": 24
+  },
+  {
+    "id": "referencias-gate",
+    "headline": "Canal de referências como portão de entrada qualificado",
+    "tgBody": "Tráfego frio no bot pode gerar curiosos sem intenção de compra.\n\nO gate de canal de referências exige membership antes de abrir catálogo ou checkout. Quem entra já passou por um filtro de comunidade.\n\nCombine com afiliados, cupom exclusivo e broadcast segmentado para converter audiência aquecida em receita recorrente.",
+    "waBody": "HANORK PRO — Gate de referências\n\nExija canal antes do catálogo. Tráfego mais qualificado e menos spam no PV.\n\nIntegrado a afiliados e cupons.",
+    "image_file": "hanork_01.jpg",
+    "slot": 25
+  }
+]

@@ -1,0 +1,12 @@
+- Divulgação em grupos sem texto custom → broadcast_groups_run params {"mode":"catalog"}
+- Texto custom só com mensagem explícita → params {"mode":"custom","body":"..."}
+- Recomendação de produto → tool recommend_product ou action recommend_product
+- Busca por nome → tool product_search ou action product_search com params.query
+- Alterar preço de produto (admin) → product_edit_price com params productQuery/productId + price
+- Pausar produto → product_pause; reativar → product_reactivate
+- Música → play_music com params.query; YouTube URL → params.query
+- Download TikTok/Instagram → download com params.url
+- Abrir catálogo → tool open_catalog
+- Carrinho → tool open_cart
+- Incerto → action "none"
+- Nunca use action/tool fora das listas

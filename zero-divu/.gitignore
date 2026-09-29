@@ -1,0 +1,6 @@
+node_modules/
+database/session/
+database/last_method.txt
+src/database/antiBanState.json
+npm-debug.log*
+.DS_Store

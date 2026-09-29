@@ -1,0 +1,355 @@
+'use strict';
+
+const { Telegraf } = require('telegraf');
+const { createAffiliateBridge } = require('./helpers/affiliateBridge');
+const { createCheckoutBridge } = require('./helpers/checkoutBridge');
+const { createGroupBroadcastStack } = require('./bootstrap/createGroupBroadcastStack');
+const { createMainMenuHandlers } = require('../telegram/menus/mainMenuHandlers');
+const { registerHanorkBot } = require('./registerHanorkBot');
+
+function buildRegisterHanorkBotDeps(ctx, runtime) {
+    return {
+        bot: runtime.bot,
+        isGroupChat: runtime.isGroupChat,
+        groupService: runtime.groupService,
+        stateManager: ctx.stateManager,
+        prisma: ctx.prisma,
+        antiSpam: ctx.antiSpam,
+        commandLimiter: ctx.commandLimiter,
+        CONFIG: ctx.CONFIG,
+        isAdmin: ctx.isAdmin,
+        upsertGroup: runtime.upsertGroup,
+        upsertGroupMember: runtime.upsertGroupMember,
+        TEXTO: ctx.TEXTO,
+        getMaintenanceMode: ctx.getMaintenanceMode,
+        setMaintenanceMode: ctx.setMaintenanceMode,
+        bannedUsers: ctx.bannedUsers,
+        adminActivityNotifier: ctx.adminActivityNotifier,
+        dbRaw: ctx.dbRaw,
+        Markup: ctx.Markup,
+        ADMIN_HTML: ctx.ADMIN_HTML,
+        Msg: ctx.Msg,
+        Menu: ctx.Menu,
+        logger: ctx.logger,
+        deferBackground: ctx.deferBackground,
+        backup: ctx.backup,
+        broadcastMode: ctx.broadcastMode,
+        addProductMode: ctx.addProductMode,
+        adminMsgTarget: ctx.adminMsgTarget,
+        editProductMode: ctx.editProductMode,
+        giveawayMode: ctx.giveawayMode,
+        autoBroadcastService: runtime.autoBroadcastService,
+        broadcastService: runtime.broadcastService,
+        AUTO_BROADCAST_INTERVAL_MS: runtime.AUTO_BROADCAST_INTERVAL_MS,
+        formatBroadcastInterval: runtime.formatBroadcastInterval,
+        executeFullBroadcast: runtime.executeFullBroadcast,
+        emailService: ctx.emailService,
+        UserEmailService: ctx.UserEmailService,
+        loadProducts: ctx.loadProducts,
+        executeBroadcast: runtime.executeBroadcast,
+        groupSettings: runtime.groupSettings,
+        sendAdminPanelWithPhoto: ctx.sendAdminPanelWithPhoto,
+        editAdminPanel: ctx.editAdminPanel,
+        invalidateProductCache: ctx.invalidateProductCache,
+        invalidateBotUsername: ctx.invalidateBotUsername,
+        carrinhos: ctx.carrinhos,
+        UserService: ctx.UserService,
+        AuditService: ctx.AuditService,
+        sendMainMenu: runtime.sendMainMenu,
+        deliverProducts: ctx.deliverProducts,
+        payAffiliateCommission: runtime.payAffiliateCommission,
+        activeChats: ctx.activeChats,
+        openTicketChat: ctx.openTicketChat,
+        closeTicketChat: ctx.closeTicketChat,
+        ticketCloseKeyboard: ctx.ticketCloseKeyboard,
+        confirmarSaldoReservado: runtime.confirmarSaldoReservado,
+        pedirAvaliacao: runtime.pedirAvaliacao,
+        joinChatAwaiting: ctx.joinChatAwaiting,
+        botSession: ctx.botSession,
+        sessionNote: ctx.sessionNote,
+        syncBusinessLinksFromSettings: runtime.syncBusinessLinksFromSettings,
+        Cart: ctx.Cart,
+        cartKey: runtime.cartKey,
+        replyWithMenuPhoto: runtime.replyWithMenuPhoto,
+        groupGuard: ctx.groupGuard,
+        catalogSearchMode: ctx.catalogSearchMode,
+        getProductById: ctx.getProductById,
+        sendProductWithPhoto: runtime.sendProductWithPhoto,
+        processAffiliateRef: runtime.processAffiliateRef,
+        startBuyProduct: runtime.startBuyProduct,
+        hanorkAssistMode: ctx.hanorkAssistMode,
+        hanorkRouterContext: ctx.hanorkRouterContext,
+        State: ctx.State,
+        campanhaEmailMode: ctx.campanhaEmailMode,
+        resgateTentativas: ctx.resgateTentativas,
+        runCheckout: runtime.runCheckout,
+        comprasPendentes: ctx.comprasPendentes,
+        cuponsAplicados: ctx.cuponsAplicados,
+        couponAttemptLimiter: ctx.couponAttemptLimiter,
+        supportMode: ctx.supportMode,
+        productWizard: ctx.productWizard,
+        onboardingStep: ctx.onboardingStep,
+        escapeMd: ctx.escapeMd,
+        requirePrivate: runtime.requirePrivate,
+        createOrder: runtime.createOrder,
+        getAffSaldo: runtime.getAffSaldo,
+        getWalletSaldo: runtime.getWalletSaldo,
+        checkCheckoutCooldown: runtime.checkCheckoutCooldown,
+        ProductWizardService: ctx.ProductWizardService,
+        ProductAdminService: ctx.ProductAdminService,
+        buildProductPhotoFileName: ctx.buildProductPhotoFileName,
+        getVipGroupId: runtime.getVipGroupId,
+        getSupportGroupId: runtime.getSupportGroupId,
+        downloadsGuard: runtime.downloadsGuard,
+        bridgePoolService: runtime.bridgePoolService,
+        getBotUsername: ctx.getBotUsername,
+        UserAccountCore: ctx.UserAccountCore,
+        UserAccountPanels: ctx.UserAccountPanels,
+        isShopAreaStartPayload: ctx.isShopAreaStartPayload,
+        resolveShopStartPayload: ctx.resolveShopStartPayload,
+        scheduleNewMemberAlerts: runtime.scheduleNewMemberAlerts,
+        openProductAdminPanelWithCleanSessions: ctx.openProductAdminPanelWithCleanSessions,
+        beginProductFieldEdit: ctx.beginProductFieldEdit,
+        productAdminDeps: ctx.productAdminDeps,
+        wizardDeps: ctx.wizardDeps,
+        beginProductCreateFlow: ctx.beginProductCreateFlow,
+    };
+}
+
+/**
+ * B3 — instancia Telegraf, bridges, broadcast, menu e registerHanorkBot.
+ */
+function bootstrapHanorkBot(ctx) {
+    const bot = new Telegraf(ctx.CONFIG.TOKEN_TELEGRAM, { handlerTimeout: 25000 });
+    ctx.botHolder.bot = bot;
+
+    let replyWithMenuPhoto;
+
+    const affiliate = createAffiliateBridge({
+        prisma: ctx.prisma,
+        affSaldoAplicado: ctx.affSaldoAplicado,
+        logger: ctx.logger,
+        UserService: ctx.UserService,
+        getTelegram: () => bot.telegram,
+    });
+
+    const checkout = createCheckoutBridge({
+        getBot: () => bot,
+        groupGuard: ctx.groupGuard,
+        prisma: ctx.prisma,
+        Cart: ctx.Cart,
+        comprasPendentes: ctx.comprasPendentes,
+        getAffSaldo: affiliate.getAffSaldo,
+        getWalletSaldo: affiliate.getWalletSaldo,
+        Menu: ctx.Menu,
+        Markup: ctx.Markup,
+        Msg: ctx.Msg,
+        cuponsAplicados: ctx.cuponsAplicados,
+        getProductById: ctx.getProductById,
+        getReplyWithMenuPhoto: () => replyWithMenuPhoto,
+    });
+
+    bot.use((ctxMw, next) => {
+        if (!ctx.bootGate.complete) return;
+        return next();
+    });
+
+    bot.use((ctxMw, next) => {
+        const text = ctxMw.message?.text || '';
+        if (text.startsWith('/start')) {
+            ctx.logger.info('[TELEGRAM] /start recebido', {
+                uid: ctxMw.from?.id,
+                chat: ctxMw.chat?.type,
+                payload: (text.split(/\s+/)[1] || '').slice(0, 40),
+            });
+        }
+        return next();
+    });
+
+    const broadcastStack = createGroupBroadcastStack({
+        bot,
+        logger: ctx.logger,
+        lastMenuMsg: ctx.lastMenuMsg,
+        dbRaw: ctx.dbRaw,
+        loadProducts: ctx.loadProducts,
+        getMaintenanceMode: ctx.getMaintenanceMode,
+        getBotUsername: ctx.getBotUsername,
+        adminActivityNotifier: ctx.adminActivityNotifier,
+        isAdmin: ctx.isAdmin,
+        CONFIG: ctx.CONFIG,
+        Markup: ctx.Markup,
+        Msg: ctx.Msg,
+        commandLimiter: ctx.commandLimiter,
+        prisma: ctx.prisma,
+        bannedUsers: ctx.bannedUsers,
+        broadcastMode: ctx.broadcastMode,
+        addProductMode: ctx.addProductMode,
+        editProductMode: ctx.editProductMode,
+        productWizard: ctx.productWizard,
+        adminMsgTarget: ctx.adminMsgTarget,
+        campanhaEmailMode: ctx.campanhaEmailMode,
+        giveawayMode: ctx.giveawayMode,
+        supportMode: ctx.supportMode,
+        activeChats: ctx.activeChats,
+        cuponsAplicados: ctx.cuponsAplicados,
+        affSaldoAplicado: ctx.affSaldoAplicado,
+        comprasPendentes: ctx.comprasPendentes,
+        abandonedCartNotified: ctx.abandonedCartNotified,
+        deliverySlotStore: ctx.deliverySlotStore,
+    });
+
+    const menuHandlers = createMainMenuHandlers({
+        bot,
+        CONFIG: ctx.CONFIG,
+        logger: ctx.logger,
+        prisma: ctx.prisma,
+        dbRaw: ctx.dbRaw,
+        Menu: ctx.Menu,
+        Msg: ctx.Msg,
+        Markup: ctx.Markup,
+        TEXTO: ctx.TEXTO,
+        isAdmin: ctx.isAdmin,
+        isGroupChat: checkout.isGroupChat,
+        groupGuard: ctx.groupGuard,
+        loadProducts: ctx.loadProducts,
+        sessionNote: ctx.sessionNote,
+        deferBackground: ctx.deferBackground,
+        sendAdminPanelWithPhoto: ctx.sendAdminPanelWithPhoto,
+        ADMIN_HTML: ctx.ADMIN_HTML,
+        getMaintenanceMode: ctx.getMaintenanceMode,
+        getVipGroupId: broadcastStack.getVipGroupId,
+        getProductById: ctx.getProductById,
+        stateManager: ctx.stateManager,
+        Cart: ctx.Cart,
+        cartKey: checkout.cartKey,
+    });
+
+    replyWithMenuPhoto = menuHandlers.replyWithMenuPhoto;
+
+    const runtime = {
+        bot,
+        ...affiliate,
+        ...checkout,
+        ...menuHandlers,
+        ...broadcastStack,
+    };
+
+    const registration = registerHanorkBot(buildRegisterHanorkBotDeps(ctx, runtime));
+
+    return {
+        bot,
+        ...runtime,
+        zeroDivuPlugin: registration.zeroDivuPlugin,
+        showCatalog: registration.showCatalog,
+        showCart: registration.showCart,
+    };
+}
+
+function buildFinalizeDeps(ctx, runtime, expressApp, httpPort) {
+    return {
+        bot: runtime.bot,
+        stateManager: ctx.stateManager,
+        isAdmin: ctx.isAdmin,
+        eventBus: ctx.eventBus,
+        logger: ctx.logger,
+        registry: ctx.registry,
+        adminIds: ctx.CONFIG.ID_DONO,
+        shutdown: {
+            getBootComplete: () => ctx.bootGate.complete,
+            logger: ctx.logger,
+            bot: runtime.bot,
+            botInstanceLock: ctx.botInstanceLock,
+            monitor: ctx.monitor,
+            state: ctx.state,
+            carrinhos: ctx.carrinhos,
+            comprasPendentes: ctx.comprasPendentes,
+            bannedUsers: ctx.bannedUsers,
+            BackupManager: ctx.BackupManager,
+            prisma: ctx.prisma,
+            QueueService: ctx.QueueService,
+        },
+        payment: {
+            bot: runtime.bot,
+            prisma: ctx.prisma,
+            logger: ctx.logger,
+            Msg: ctx.Msg,
+            Markup: ctx.Markup,
+            Menu: ctx.Menu,
+            MP: ctx.MP,
+            antiSpam: ctx.antiSpam,
+            comprasPendentes: ctx.comprasPendentes,
+            cartKey: runtime.cartKey,
+            getAffSaldo: runtime.getAffSaldo,
+            getWalletSaldo: runtime.getWalletSaldo,
+            dbRaw: ctx.dbRaw,
+            lastMenuMsg: ctx.lastMenuMsg,
+        },
+        callbacks: {
+            bot: runtime.bot,
+            isAdmin: ctx.isAdmin,
+            stateManager: ctx.stateManager,
+            sendMainMenu: runtime.sendMainMenu,
+            botSession: ctx.botSession,
+            showCatalog: runtime.showCatalog,
+            showCart: runtime.showCart,
+            cartKey: runtime.cartKey,
+            Cart: ctx.Cart,
+            createOrder: runtime.createOrder,
+            prisma: ctx.prisma,
+            comprasPendentes: ctx.comprasPendentes,
+            getAffSaldo: runtime.getAffSaldo,
+            getWalletSaldo: runtime.getWalletSaldo,
+            checkCheckoutCooldown: runtime.checkCheckoutCooldown,
+            Menu: ctx.Menu,
+            Markup: ctx.Markup,
+            Msg: ctx.Msg,
+            cuponsAplicados: ctx.cuponsAplicados,
+            requirePrivate: runtime.requirePrivate,
+            deliverProducts: ctx.deliverProducts,
+            payAffiliateCommission: runtime.payAffiliateCommission,
+            campanhaEmailMode: ctx.campanhaEmailMode,
+        },
+        analytics: { dbRaw: ctx.dbRaw, logger: ctx.logger },
+        boot: {
+            monitor: ctx.monitor,
+            migrateFromJSON: ctx.migrateFromJSON,
+            prisma: ctx.prisma,
+            logger: ctx.logger,
+            dbRaw: ctx.dbRaw,
+            PaymentService: ctx.PaymentService,
+            BackupManager: ctx.BackupManager,
+            bot: runtime.bot,
+            antiSpam: ctx.antiSpam,
+            state: ctx.state,
+            carrinhos: ctx.carrinhos,
+            comprasPendentes: ctx.comprasPendentes,
+            bannedUsers: ctx.bannedUsers,
+            CONFIG: ctx.CONFIG,
+            warmMenuPhotoCache: ctx.warmMenuPhotoCache,
+            expressApp,
+            HTTP_PORT: httpPort,
+            startExpressServer: require('../app/createServer').startExpressServer,
+            registry: ctx.registry,
+            getZeroDivuPlugin: () => runtime.zeroDivuPlugin,
+            setBootComplete: () => { ctx.bootGate.complete = true; },
+            setBotUsername: ctx.setBotUsername,
+            getBotUsername: ctx.getBotUsernameCached,
+            botInstanceLock: ctx.botInstanceLock,
+            adminActivityNotifier: ctx.adminActivityNotifier,
+            deferBackground: ctx.deferBackground,
+            autoBroadcastService: runtime.autoBroadcastService,
+            groupService: runtime.groupService,
+            bridgePoolService: runtime.bridgePoolService,
+            MP: ctx.MP,
+            SafeWebhookHandler: ctx.SafeWebhookHandler,
+            SafeDeliveryService: ctx.SafeDeliveryService,
+            mpAmountMatchesOrder: ctx.mpAmountMatchesOrder,
+            loadProducts: ctx.loadProducts,
+            deliverySlotStore: ctx.deliverySlotStore,
+            CustomerSubscriptionService: ctx.CustomerSubscriptionService,
+            QueueService: ctx.QueueService,
+        },
+    };
+}
+
+module.exports = { bootstrapHanorkBot, buildFinalizeDeps };

@@ -1,0 +1,28 @@
+# Regras de alerta Hanork (P5-3) — avaliadas pelo Prometheus
+groups:
+  - name: hanork_orders
+    interval: 30s
+    rules:
+      - alert: HanorkStuckPaidOrders
+        expr: hanork_stuck_paid_orders > 0
+        for: 5m
+        labels:
+          severity: warning
+          service: hanork-bot
+        annotations:
+          summary: "{{ $value }} pedido(s) PAID sem entrega"
+          description: >-
+            Pedidos PAID parados além de METRICS_STUCK_ORDER_MINUTES (gauge hanork_stuck_paid_orders).
+            Verifique fila Bull delivery:products, SafeDeliveryService e logs [DELIVERY] / [RECOVER].
+
+      - alert: HanorkStuckDeliveringOrders
+        expr: hanork_stuck_delivering_orders > 0
+        for: 5m
+        labels:
+          severity: warning
+          service: hanork-bot
+        annotations:
+          summary: "{{ $value }} pedido(s) DELIVERING travados"
+          description: >-
+            Entregas em progresso sem conclusão. Verificar API Telegram, SafeDeliveryService.recoverStuckDeliveries
+            e métrica hanork_stuck_delivering_orders.

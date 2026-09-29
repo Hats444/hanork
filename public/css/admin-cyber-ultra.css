@@ -1,0 +1,528 @@
+/* Camada ultra — densidade visual cyber (GPU-friendly) */
+
+/* —— Radar + circuitos —— */
+.cyber-radar {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.12;
+  background:
+    conic-gradient(from 0deg at 50% 55%, transparent 0deg, rgba(0, 245, 212, 0.15) 25deg, transparent 50deg);
+  animation: radar-sweep 12s linear infinite;
+  mask-image: radial-gradient(circle at 50% 55%, black 0%, transparent 55%);
+}
+
+@keyframes radar-sweep {
+  to { transform: rotate(360deg); }
+}
+
+.circuit-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='none' stroke='%2300f5d4' stroke-width='0.5' d='M0 50 H60 V20 H120 V80 H200 M0 150 H40 V120 H100 V180 H200 M150 0 V60 H180 V120'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+.data-stream {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.35;
+  font-size: 0.5rem;
+  line-height: 1.1;
+  color: var(--cyan);
+  letter-spacing: 0.05em;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.data-stream.left {
+  left: 0;
+  border-right: 1px solid rgba(0, 245, 212, 0.08);
+  background: linear-gradient(90deg, rgba(0, 245, 212, 0.04), transparent);
+}
+
+.data-stream.right {
+  right: 0;
+  border-left: 1px solid rgba(255, 42, 109, 0.08);
+  background: linear-gradient(270deg, rgba(255, 42, 109, 0.04), transparent);
+  color: var(--magenta);
+}
+
+.stream-inner {
+  display: block;
+  white-space: nowrap;
+  animation: stream-fall 22s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes stream-fall {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+/* —— Moldura content —— */
+.content {
+  position: relative;
+}
+
+.content::before,
+.content::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  pointer-events: none;
+  z-index: 10;
+  width: 20px;
+  height: 20px;
+}
+
+.content::before {
+  left: 14px;
+  border-top: 2px solid var(--cyan);
+  border-left: 2px solid var(--cyan);
+  box-shadow: -3px -3px 12px rgba(0, 245, 212, 0.25);
+}
+
+.content::after {
+  right: 14px;
+  border-top: 2px solid var(--magenta);
+  border-right: 2px solid var(--magenta);
+  box-shadow: 3px -3px 12px rgba(255, 42, 109, 0.2);
+}
+
+/* —— Waveform topbar —— */
+.waveform-strip {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  height: 14px;
+  padding: 0 24px 4px;
+  background: rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(0, 245, 212, 0.06);
+  overflow: hidden;
+}
+
+.waveform-strip span {
+  display: block;
+  width: 3px;
+  min-height: 2px;
+  background: var(--cyan);
+  opacity: 0.45;
+  animation: wave-bar 0.8s ease-in-out infinite;
+}
+
+.waveform-strip span:nth-child(odd) { background: var(--purple); }
+.waveform-strip span:nth-child(3n) { background: var(--magenta); }
+
+.waveform-strip span:nth-child(1) { animation-delay: 0s; height: 4px; }
+.waveform-strip span:nth-child(2) { animation-delay: 0.05s; }
+.waveform-strip span:nth-child(3) { animation-delay: 0.1s; }
+.waveform-strip span:nth-child(4) { animation-delay: 0.15s; }
+.waveform-strip span:nth-child(5) { animation-delay: 0.2s; }
+.waveform-strip span:nth-child(6) { animation-delay: 0.08s; }
+.waveform-strip span:nth-child(7) { animation-delay: 0.18s; }
+.waveform-strip span:nth-child(8) { animation-delay: 0.03s; }
+.waveform-strip span:nth-child(9) { animation-delay: 0.12s; }
+.waveform-strip span:nth-child(10) { animation-delay: 0.22s; }
+.waveform-strip span:nth-child(11) { animation-delay: 0.07s; }
+.waveform-strip span:nth-child(12) { animation-delay: 0.17s; }
+.waveform-strip span:nth-child(13) { animation-delay: 0.02s; }
+.waveform-strip span:nth-child(14) { animation-delay: 0.14s; }
+.waveform-strip span:nth-child(15) { animation-delay: 0.09s; }
+.waveform-strip span:nth-child(16) { animation-delay: 0.19s; }
+.waveform-strip span:nth-child(17) { animation-delay: 0.04s; }
+.waveform-strip span:nth-child(18) { animation-delay: 0.16s; }
+.waveform-strip span:nth-child(19) { animation-delay: 0.11s; }
+.waveform-strip span:nth-child(20) { animation-delay: 0.21s; }
+
+@keyframes wave-bar {
+  0%, 100% { height: 3px; opacity: 0.3; }
+  50% { height: 12px; opacity: 0.85; box-shadow: 0 0 6px var(--cyan); }
+}
+
+/* —— HUD rail direita —— */
+.hud-rail {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  padding: 16px 6px;
+  pointer-events: none;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  border-left: 1px solid rgba(0, 245, 212, 0.1);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.hud-rail span {
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: var(--text3);
+  opacity: 0.4;
+}
+
+.hud-rail span.on {
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+  opacity: 1;
+}
+
+.hud-rail .rail-label {
+  writing-mode: vertical-rl;
+  font-size: 0.45rem;
+  letter-spacing: 0.25em;
+  color: var(--text3);
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .hud-rail,
+  .data-stream {
+    display: none;
+  }
+}
+
+/* —— Sidebar hash —— */
+.sb-hash {
+  margin: 0 10px 10px;
+  padding: 8px 10px;
+  font-size: 0.5rem;
+  color: var(--text3);
+  letter-spacing: 0.08em;
+  border: 1px dashed rgba(0, 245, 212, 0.12);
+  background: rgba(0, 0, 0, 0.3);
+  word-break: break-all;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
+.sb-hash .lbl {
+  display: block;
+  color: var(--magenta);
+  margin-bottom: 4px;
+  letter-spacing: 0.2em;
+}
+
+.sb-hash code {
+  color: var(--cyan-dim);
+}
+
+/* —— Gtitle meta —— */
+.gtitle {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gtitle-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gtitle-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.55rem;
+  color: var(--text3);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gtitle-meta .sector {
+  padding: 3px 8px;
+  border: 1px solid rgba(185, 103, 255, 0.35);
+  color: var(--purple);
+}
+
+.gtitle-meta .hash {
+  color: var(--cyan-dim);
+  font-family: var(--font-mono);
+}
+
+/* Glitch título topbar */
+.tb-title.glitch {
+  animation: glitch-skew 0.35s steps(2) 1;
+  text-shadow:
+    2px 0 var(--magenta),
+    -2px 0 var(--cyan);
+}
+
+@keyframes glitch-skew {
+  0% { transform: translate(0); }
+  25% { transform: translate(-2px, 1px); }
+  50% { transform: translate(2px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+/* —— Nav numeração —— */
+.ni {
+  position: relative;
+}
+
+.ni .nav-idx {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.5rem;
+  color: var(--text3);
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+}
+
+.ni.active .nav-idx {
+  color: var(--magenta);
+  opacity: 1;
+}
+
+.ni.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 2px;
+  background: linear-gradient(180deg, var(--cyan), var(--magenta));
+  box-shadow: 0 0 10px var(--cyan);
+}
+
+/* —— KPI valores chromatic —— */
+.kc-val {
+  text-shadow:
+    0 0 24px rgba(0, 245, 212, 0.35),
+    1px 0 rgba(255, 42, 109, 0.2),
+    -1px 0 rgba(185, 103, 255, 0.2);
+}
+
+.kc:nth-child(2) .kc-val { color: var(--purple); }
+.kc:nth-child(3) .kc-val { color: var(--magenta); }
+.kc:nth-child(4) .kc-val { color: var(--green); }
+
+/* Financeiro KPIs iguais */
+#page-financeiro .kc {
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+#page-financeiro .kc .kc-inner {
+  position: relative;
+  z-index: 1;
+  background: var(--panel);
+  margin: 1px;
+  padding: 17px;
+}
+
+/* —— Ring chart glow —— */
+.ring-w svg {
+  filter: drop-shadow(0 0 12px rgba(57, 255, 20, 0.25));
+}
+
+.ring-w::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(0, 245, 212, 0.06), transparent 60%);
+  pointer-events: none;
+}
+
+.ring-w {
+  position: relative;
+}
+
+/* —— Tabelas premium —— */
+.tbl tbody tr {
+  transition: background 0.15s;
+}
+
+.tbl tbody tr:hover td {
+  background: rgba(0, 245, 212, 0.04);
+  color: var(--text);
+}
+
+.tbl tbody tr:hover td:first-child {
+  box-shadow: inset 3px 0 0 var(--cyan);
+}
+
+.tbl th {
+  position: relative;
+}
+
+.tbl th::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--cyan), transparent, var(--magenta));
+  opacity: 0.4;
+}
+
+/* —— Page transition (só quando visível) —— */
+.page.on {
+  animation: page-enter 0.35s var(--ease);
+}
+
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* —— Cards textura (sem sobrescrever cantos ::after) —— */
+.card {
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      rgba(0, 245, 212, 0.02) 8px,
+      rgba(0, 245, 212, 0.02) 9px
+    ),
+    linear-gradient(135deg, rgba(0, 245, 212, 0.04) 0%, transparent 45%),
+    var(--panel);
+}
+
+/* —— Feed pulse dot —— */
+.fi {
+  padding-left: 18px;
+}
+
+.fi::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: fi-pulse 2s ease-in-out infinite;
+}
+
+@keyframes fi-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* —— Produto grid cards —— */
+.pc {
+  border-image: linear-gradient(135deg, var(--cyan), var(--magenta)) 1;
+}
+
+.pc .pc-n {
+  text-shadow: 0 0 12px rgba(0, 245, 212, 0.3);
+}
+
+/* —— Search bar HUD —— */
+.srch {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.srch::before {
+  content: 'QUERY //';
+  position: absolute;
+  left: 12px;
+  top: -10px;
+  font-size: 0.5rem;
+  color: var(--magenta);
+  letter-spacing: 0.15em;
+  background: var(--void);
+  padding: 0 6px;
+  z-index: 1;
+}
+
+/* —— Scope pill enhanced —— */
+.scope-pill {
+  position: relative;
+  overflow: hidden;
+}
+
+.scope-pill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  animation: pill-shine 4s ease-in-out infinite;
+}
+
+@keyframes pill-shine {
+  0%, 100% { left: -100%; }
+  50% { left: 150%; }
+}
+
+/* —— Mais partículas —— */
+.cyber-particles span:nth-child(9) { left: 12%; top: 48%; animation-delay: 2.8s; }
+.cyber-particles span:nth-child(10) { left: 78%; top: 42%; animation-delay: 3.5s; background: var(--cyan); }
+.cyber-particles span:nth-child(11) { left: 62%; top: 8%; animation-delay: 1.1s; }
+.cyber-particles span:nth-child(12) { left: 28%; top: 88%; animation-delay: 4.5s; background: var(--magenta); }
+.cyber-particles span:nth-child(13) { left: 95%; top: 72%; animation-delay: 0.5s; }
+.cyber-particles span:nth-child(14) { left: 48%; top: 58%; animation-delay: 2.2s; width: 3px; height: 3px; }
+.cyber-particles span:nth-child(15) { left: 18%; top: 32%; animation-delay: 3.8s; background: var(--purple); }
+.cyber-particles span:nth-child(16) { left: 72%; top: 28%; animation-delay: 1.5s; }
+
+/* —— Status bar extra ticks —— */
+.cyber-statusbar::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--cyan), var(--magenta), var(--purple), var(--cyan));
+  background-size: 200% 100%;
+  animation: border-flow 8s linear infinite;
+  opacity: 0.5;
+}
+
+.cyber-statusbar {
+  position: relative;
+}
+
+/* —— Topbar scan line —— */
+.topbar {
+  position: relative;
+  overflow: hidden;
+}
+
+.topbar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  animation: tb-scan 5s ease-in-out infinite;
+}
+
+@keyframes tb-scan {
+  0% { left: -30%; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}

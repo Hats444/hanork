@@ -1,0 +1,41 @@
+{
+  "gptSuccess": {
+    "status": true,
+    "criador": "@lucas_mod_domina",
+    "resultado": "Automatize vendas no Telegram com entrega imediata após o PIX."
+  },
+  "gptError429": {
+    "status": false,
+    "criador": "@lucas_mod_domina",
+    "error": "Todos os métodos de IA falharam: Request failed with status code 429"
+  },
+  "gpt4Error429": {
+    "status": false,
+    "criador": "@lucas_mod_domina",
+    "error": "Erro em todos os provedores: Request failed with status code 429"
+  },
+  "geminiErrorQuota": {
+    "error": "Ocorreu um erro ao processar sua solicitação.",
+    "detalhes": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details.\",\"status\":\"RESOURCE_EXHAUSTED\"}}"
+  },
+  "geminiSuccess": {
+    "status": true,
+    "resultado": "Bot de vendas no Telegram com checkout PIX e entrega automática."
+  },
+  "geminiSuccessCandidates": {
+    "status": true,
+    "resultado": {
+      "candidates": [
+        {
+          "content": {
+            "parts": [{ "text": "Copy persuasiva gemini" }]
+          }
+        }
+      ]
+    }
+  },
+  "zerotwoSuccess": {
+    "status": true,
+    "resultado": "Plataforma completa para vendas digitais com suporte e catálogo integrado."
+  }
+}

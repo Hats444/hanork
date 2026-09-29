@@ -1,0 +1,85 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "datasource": { "type": "prometheus", "uid": "Prometheus" },
+      "fieldConfig": { "defaults": { "unit": "s" }, "overrides": [] },
+      "gridPos": { "h": 4, "w": 6, "x": 0, "y": 0 },
+      "id": 1,
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] } },
+      "targets": [{ "expr": "hanork_bot_uptime_seconds", "legendFormat": "uptime" }],
+      "title": "Bot uptime",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "Prometheus" },
+      "gridPos": { "h": 4, "w": 6, "x": 6, "y": 0 },
+      "id": 2,
+      "targets": [{ "expr": "hanork_bot_polling_active", "legendFormat": "polling" }],
+      "title": "Telegram polling",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "Prometheus" },
+      "gridPos": { "h": 4, "w": 6, "x": 12, "y": 0 },
+      "id": 3,
+      "targets": [{ "expr": "hanork_stuck_paid_orders", "legendFormat": "stuck paid" }],
+      "title": "Stuck PAID orders",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "Prometheus" },
+      "gridPos": { "h": 4, "w": 6, "x": 18, "y": 0 },
+      "id": 4,
+      "targets": [{ "expr": "hanork_stuck_delivering_orders", "legendFormat": "stuck delivering" }],
+      "title": "Stuck DELIVERING",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "Prometheus" },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 4 },
+      "id": 5,
+      "targets": [
+        { "expr": "hanork_sqlite_busy_total", "legendFormat": "sqlite busy" },
+        { "expr": "hanork_409_conflicts_total", "legendFormat": "409 conflicts" }
+      ],
+      "title": "SQLite / Telegram 409",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "Prometheus" },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 4 },
+      "id": 6,
+      "targets": [
+        { "expr": "hanork_ai_requests_total", "legendFormat": "requests" },
+        { "expr": "hanork_ai_fail_total", "legendFormat": "fail" },
+        { "expr": "hanork_ai_429_total", "legendFormat": "429" }
+      ],
+      "title": "IA throughput",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "Prometheus" },
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 12 },
+      "id": 7,
+      "targets": [
+        { "expr": "hanork_bull_queue_waiting", "legendFormat": "{{queue}}" }
+      ],
+      "title": "Bull queue waiting",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 39,
+  "tags": ["hanork", "v4"],
+  "time": { "from": "now-6h", "to": "now" },
+  "timezone": "browser",
+  "title": "Hanork Operations",
+  "uid": "hanork-ops-v4",
+  "version": 1
+}

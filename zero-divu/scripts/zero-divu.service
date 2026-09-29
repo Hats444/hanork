@@ -1,0 +1,20 @@
+[Unit]
+Description=Zero Divu WhatsApp Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/zero-divu
+ExecStart=/usr/bin/node connect.js
+Restart=always
+RestartSec=10
+Environment=NODE_ENV=production
+
+# Ajuste User e WorkingDirectory para o seu usuário/pasta
+# Para pareamento na 1ª vez: node connect.js --code (manual)
+# Depois de logado, este serviço reconecta sozinho.
+
+[Install]
+WantedBy=multi-user.target

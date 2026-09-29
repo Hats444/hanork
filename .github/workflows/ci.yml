@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master, develop]
+
+permissions:
+  contents: read
+
+jobs:
+  unit-and-routing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Menu photo scan
+        run: npm run test:menu-photo
+
+      - name: Callback routing gate (SP-9)
+        run: node scripts/test-callback-routing.js
+
+      - name: Prometheus metrics (SP-4)
+        run: node scripts/test-prometheus-metrics.js
+
+      - name: Catalog AI queue (SP-5)
+        run: node scripts/test-catalog-ai-queue.js
+
+      - name: UX sprint (SP-6/7)
+        run: node scripts/test-ux-sprint.js
+
+      - name: Modularization M3/M4
+        run: node scripts/test-modularization-m3.js
+
+      - name: Dashboard tenant scope (SP-3 / SEC-C1)
+        run: node scripts/test-dashboard-tenant-scope.js
+
+      - name: CRM tenant scope (SEC-C2)
+        run: node scripts/test-crm-tenant-scope.js
+
+      - name: Observability config (SP-8 B1)
+        run: node scripts/test-observability-config.js
+
+      - name: Env example debt markers (SP-10 B1)
+        run: node scripts/test-env-example-debt.js
+
+      - name: Security + unit suite
+        run: npm run test:unit

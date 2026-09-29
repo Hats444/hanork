@@ -1,0 +1,202 @@
+[
+  {
+    "id": "smm-launch-1",
+    "headline": "Serviços SMM profissionais no @hanork_bot",
+    "tgBody": "Impulsione sua presença digital sem sair do Telegram.\n\nNo Hanork você encontra seguidores, curtidas e visualizações para Instagram, TikTok, YouTube e Telegram. Catálogo organizado, preço visível antes do pagamento e entrega automática após confirmação.\n\nAceitamos PIX e cartão via Mercado Pago. Acompanhe cada pedido no privado do bot. Dúvidas: /suporte.",
+    "waBody": "Serviços SMM no Hanork\n\nSeguidores, curtidas e views para Instagram, TikTok, YouTube e Telegram.\n\nPIX ou cartão. Entrega automática após pagamento.\n\nAcesse: t.me/hanork_bot?start=smm",
+    "image_file": "ssm_01.jpg",
+    "slot": 1
+  },
+  {
+    "id": "smm-launch-2",
+    "headline": "Engajamento com checkout seguro no privado",
+    "tgBody": "Problema: perfis com pouco movimento passam menos credibilidade.\n\nSolução: catálogo SMM curado no @hanork_bot. Escolha a plataforma, o tipo de serviço, informe o link, selecione a quantidade e pague com PIX ou cartão.\n\nSem transferir para desconhecido. Tudo dentro do bot, com status do pedido em tempo real.",
+    "waBody": "Engajamento seguro no Hanork\n\nCatálogo SMM curado. PIX ou cartão no privado.\n\nEscolha plataforma, serviço e quantidade.\n\nSuporte: /suporte",
+    "image_file": "ssm_01.jpg",
+    "slot": 2
+  },
+  {
+    "id": "smm-launch-3",
+    "headline": "Instagram: seguidores, curtidas e views",
+    "tgBody": "Recursos disponíveis para Instagram:\n\n• Seguidores brasileiros e internacionais\n• Curtidas em posts e reels\n• Visualizações em stories e vídeos\n\nPedido em menos de dois minutos. Cole o link do perfil ou publicação, escolha a quantidade, pague e acompanhe a entrega no PV.",
+    "waBody": "Instagram no Hanork\n\nSeguidores, curtidas e views direto no bot.\n\nPIX ou cartão. Entrega automática após confirmação.\n\nt.me/hanork_bot?start=smm",
+    "image_file": "ssm_01.jpg",
+    "slot": 3
+  },
+  {
+    "id": "smm-launch-4",
+    "headline": "TikTok: views, curtidas e seguidores",
+    "tgBody": "Seu conteúdo no TikTok precisa de tração inicial para alcançar novos públicos.\n\nNo Hanork você compra visualizações, curtidas e seguidores informando apenas o link do vídeo ou perfil. Pagamento por PIX ou cartão, sem cadastro em painel externo.\n\nIdeal para criadores, marcas e lojas que querem acelerar a visibilidade de lançamentos.",
+    "waBody": "TikTok no Hanork\n\nViews, curtidas e seguidores pelo bot.\n\nLink + quantidade + pagamento. Entrega automática.\n\nMenu Comprar Serviços ou /smm",
+    "image_file": "ssm_01.jpg",
+    "slot": 4
+  },
+  {
+    "id": "smm-launch-5",
+    "headline": "YouTube: inscritos, likes e visualizações",
+    "tgBody": "Canal parado dificulta parcerias e monetização.\n\nO catálogo SMM do Hanork oferece inscritos, likes e visualizações para YouTube. Informe o link do canal ou vídeo, selecione o serviço e pague com PIX ou cartão.\n\nStatus do pedido acompanhado no privado. Suporte disponível com /suporte.",
+    "waBody": "YouTube no Hanork\n\nInscritos, likes e views pelo bot.\n\nPIX ou cartão. Acompanhe o pedido no PV.\n\nDúvidas: /suporte",
+    "image_file": "ssm_01.jpg",
+    "slot": 5
+  },
+  {
+    "id": "smm-launch-6",
+    "headline": "Membros para canal e grupo no Telegram",
+    "tgBody": "Quer dar movimento ao seu canal ou grupo?\n\nAdicione membros via catálogo SMM do Hanork. Entrega automática após confirmação do pagamento.\n\nÚtil para comunidades comerciais, canais de divulgação e grupos de vendas que precisam parecer ativos para novos visitantes.",
+    "waBody": "Membros Telegram\n\nImpulsione canal ou grupo pelo @hanork_bot.\n\nEntrega automática após pagamento.\n\nt.me/hanork_bot?start=smm",
+    "image_file": "ssm_01.jpg",
+    "slot": 6
+  },
+  {
+    "id": "smm-launch-7",
+    "headline": "Pagou? O pedido entra na fila na hora",
+    "tgBody": "Fluxo automatizado do início ao fim.\n\nVocê escolhe o serviço, informa o link, paga com PIX ou cartão e o pedido entra na fila de entrega automaticamente. Cada etapa fica registrada no privado do bot.\n\nSem esperar confirmação manual. Sem reenviar comprovante.",
+    "waBody": "Entrega automática Hanork\n\nPague e acompanhe o pedido no PV.\n\nSMM para Instagram, TikTok, YouTube e Telegram.\n\nPIX ou cartão.",
+    "image_file": "ssm_01.jpg",
+    "slot": 7
+  },
+  {
+    "id": "smm-launch-8",
+    "headline": "Para criadores, afiliados e lojas digitais",
+    "tgBody": "Influencer recém-lançado, afiliado com vitrine nova ou loja que precisa de prova social?\n\nO Hanork combina produtos digitais e serviços SMM no mesmo bot. Compre engajamento para o perfil e continue operando vendas sem trocar de plataforma.\n\nCatálogo curado, preço transparente e pagamento seguro no PV.",
+    "waBody": "SMM para criadores\n\nEngajamento e produtos digitais no mesmo bot Hanork.\n\nPIX, cartão e suporte no PV.",
+    "image_file": "ssm_01.jpg",
+    "slot": 8
+  },
+  {
+    "id": "smm-launch-9",
+    "headline": "Seguidores brasileiros e internacionais",
+    "tgBody": "Precisa de público BR ou alcance global?\n\nO catálogo SMM do Hanork oferece opções de seguidores brasileiros e internacionais, conforme a plataforma escolhida.\n\nAbra o menu Comprar Serviços, filtre pela rede social e compare quantidades e valores antes de pagar.",
+    "waBody": "Seguidores BR e internacionais\n\nOpções no catálogo SMM do Hanork.\n\nt.me/hanork_bot?start=smm",
+    "image_file": "ssm_01.jpg",
+    "slot": 9
+  },
+  {
+    "id": "smm-launch-10",
+    "headline": "PIX ou cartão: pagamento dentro do bot",
+    "tgBody": "Mercado Pago integrado ao @hanork_bot.\n\nGere PIX com QR Code ou pague com cartão de crédito, tudo no privado. Nada de transferir para conta de desconhecido.\n\nSe algo sair do esperado no pedido, abra ticket com /suporte e acompanhe a resolução pelo bot.",
+    "waBody": "Pagamento seguro\n\nPIX ou cartão no Hanork. Suporte no PV.\n\nServiços SMM com entrega automática.\n\n/suporte",
+    "image_file": "ssm_01.jpg",
+    "slot": 10
+  },
+  {
+    "id": "smm-launch-11",
+    "headline": "Quatro plataformas, um catálogo só",
+    "tgBody": "Chega de abrir site diferente para cada rede.\n\nInstagram, TikTok, YouTube e Telegram reunidos num catálogo único no Hanork. Escolha a plataforma, o serviço, cole o link, defina a quantidade e conclua o pagamento.\n\nOperação simples para quem gerencia vários perfis ao mesmo tempo.",
+    "waBody": "Tudo num bot só\n\nSMM para várias redes no Hanork.\n\nMenu Comprar Serviços ou /smm",
+    "image_file": "ssm_01.jpg",
+    "slot": 11
+  },
+  {
+    "id": "smm-launch-12",
+    "headline": "Já usa o Hanork? O SMM está no mesmo menu",
+    "tgBody": "Se você já compra produtos digitais no Hanork, agora também pode adquirir engajamento no mesmo bot.\n\nToque em Comprar Serviços ou digite /smm. O fluxo é idêntico: escolha, link, quantidade, pagamento.\n\nDois serviços, uma conta, um histórico de pedidos.",
+    "waBody": "Comprar Serviços\n\nMenu do bot, SMM ou /smm\n\nPIX, cartão e suporte no PV.\n\nt.me/hanork_bot?start=smm",
+    "image_file": "ssm_01.jpg",
+    "slot": 12
+  },
+  {
+    "id": "smm-launch-13",
+    "headline": "Prova social para perfis comerciais",
+    "tgBody": "Marcas, parceiros e clientes avaliam números antes de confiar.\n\nUse o catálogo SMM do Hanork para dar tração inicial ao perfil ou canal, com preço visível e pedido rastreável no privado.\n\nIndicado para lançamentos, vitrines novas e perfis comerciais que precisam transmitir atividade.",
+    "waBody": "Prova social no perfil\n\nEngajamento SMM pelo bot Hanork.\n\nPIX, cartão e status do pedido no PV.",
+    "image_file": "ssm_01.jpg",
+    "slot": 13
+  },
+  {
+    "id": "smm-launch-14",
+    "headline": "Views para reels, stories e vídeos",
+    "tgBody": "Conteúdo de qualidade sem visualização fica invisível no algoritmo.\n\nCompre views para reels, stories e vídeos. Curtidas para dar impulso inicial. Seguidores para consolidar presença.\n\nTudo no catálogo SMM do Hanork. Cole o link, pague e acompanhe a entrega pelo privado.",
+    "waBody": "Alcance no Instagram e TikTok\n\nViews, curtidas e seguidores no Hanork.\n\nEscolha plataforma e quantidade no bot.",
+    "image_file": "ssm_01.jpg",
+    "slot": 14
+  },
+  {
+    "id": "smm-launch-15",
+    "headline": "Pedido em três passos: link, quantidade, pagar",
+    "tgBody": "Sem formulário extenso. Sem painel confuso.\n\nPasso 1: abra Comprar Serviços ou /smm.\nPasso 2: escolha plataforma, serviço, link e quantidade.\nPasso 3: pague com PIX ou cartão.\n\nEm poucos minutos o pedido entra na fila e você acompanha pelo privado.",
+    "waBody": "SMM em poucos minutos\n\nLink + quantidade + pagamento no @hanork_bot.\n\nEntrega automática após confirmação.",
+    "image_file": "ssm_01.jpg",
+    "slot": 15
+  },
+  {
+    "id": "smm-launch-16",
+    "headline": "Suporte dedicado quando você precisar",
+    "tgBody": "Operação automatizada não significa abandono.\n\nSe tiver dúvida sobre serviço, prazo ou status do pedido, use /suporte no @hanork_bot. Atendimento pelo privado, com histórico do ticket.\n\nCatálogo SMM com entrega automática, PIX, cartão e acompanhamento transparente.",
+    "waBody": "Suporte Hanork SMM\n\nDúvidas ou problemas no pedido: /suporte\n\nPIX, cartão e entrega automática no bot.",
+    "image_file": "ssm_01.jpg",
+    "slot": 16
+  },
+  {
+    "id": "smm-launch-17",
+    "headline": "Engajamento estratégico para campanhas",
+    "tgBody": "Lançamento de produto, promoção relâmpago ou abertura de canal?\n\nCombine seguidores, curtidas e views conforme o objetivo da campanha. O Hanork permite montar pedidos distintos para cada plataforma.\n\nPreço visível antes de pagar. Entrega automática. Suporte com /suporte.",
+    "waBody": "Engajamento para campanhas\n\nSeguidores, curtidas e views no Hanork.\n\nMenu Comprar Serviços ou /smm",
+    "image_file": "ssm_01.jpg",
+    "slot": 17
+  },
+  {
+    "id": "smm-launch-18",
+    "headline": "Autoridade digital com operação profissional",
+    "tgBody": "Perfil com baixo engajamento limita oportunidades de parceria e venda.\n\nNo Hanork você contrata serviços SMM com tom comercial, preço claro e fluxo rastreável. Sem promessas exageradas: engajamento para quem busca crescimento consistente.\n\nInstagram, TikTok, YouTube e Telegram. PIX ou cartão.",
+    "waBody": "Autoridade nas redes\n\nSeguidores, curtidas e views pelo @hanork_bot.\n\nPIX ou cartão. Acompanhe o pedido no PV.",
+    "image_file": "ssm_01.jpg",
+    "slot": 18
+  },
+  {
+    "id": "smm-launch-19",
+    "headline": "Histórico de pedidos e transparência total",
+    "tgBody": "Cada compra fica registrada no privado do bot.\n\nConsulte status, valor pago, serviço contratado e andamento da entrega sem depender de print ou conversa externa.\n\nCatálogo SMM para Instagram, TikTok, YouTube e Telegram. Pagamento por PIX ou cartão. Suporte: /suporte.",
+    "waBody": "Pedidos rastreáveis\n\nAcompanhe cada etapa no PV do Hanork.\n\nSMM com PIX, cartão e entrega automática.",
+    "image_file": "ssm_01.jpg",
+    "slot": 19
+  },
+  {
+    "id": "smm-launch-20",
+    "headline": "Engajamento que apoia conversão, não substitui conteúdo",
+    "tgBody": "Tráfego sem movimento no perfil converte menos.\n\nO Hanork oferece seguidores, curtidas e views como ferramenta complementar: perfil novo, vitrine comercial ou canal que precisa de impulso inicial.\n\nCatálogo curado, preço visível, entrega automática e suporte com /suporte. Abra Comprar Serviços ou digite /smm.",
+    "waBody": "Engajamento com conversão\n\nSMM completo no Hanork: seguidores, curtidas, views.\n\nMenu Comprar Serviços ou /smm\n\nPIX, cartão e /suporte",
+    "image_file": "ssm_01.jpg",
+    "slot": 20
+  },
+  {
+    "id": "smm-launch-21",
+    "headline": "Twitter / X: seguidores e engajamento inicial",
+    "tgBody": "Perfil novo no X precisa de sinais de movimento para ganhar alcance orgânico.\n\nNo Hanork você contrata seguidores e interações informando o @ do perfil. Preço visível antes do pagamento, entrega automática após confirmação PIX ou cartão.\n\nUse como impulso em lançamentos, threads comerciais ou vitrine de autoridade — sempre com acompanhamento no privado do bot.",
+    "waBody": "SMM Twitter/X no Hanork\n\nSeguidores e engajamento pelo @hanork_bot.\n\nPIX ou cartão. Status do pedido no PV.",
+    "image_file": "ssm_01.jpg",
+    "slot": 21
+  },
+  {
+    "id": "smm-launch-22",
+    "headline": "Facebook: curtidas e seguidores para página",
+    "tgBody": "Página com poucos likes passa menos confiança em anúncios e orgânico.\n\nCatálogo SMM do Hanork inclui serviços para Facebook: curtidas em posts, seguidores de página e visualizações quando disponíveis.\n\nFluxo simples: link da página, quantidade, pagamento. Sem painel externo obscuro. Suporte via /suporte.",
+    "waBody": "Facebook SMM\n\nCurtidas e seguidores de página no Hanork.\n\nLink + quantidade + PIX ou cartão.",
+    "image_file": "ssm_01.jpg",
+    "slot": 22
+  },
+  {
+    "id": "smm-launch-23",
+    "headline": "Spotify: plays e seguidores para artista",
+    "tgBody": "Lançamento musical precisa de tração nas primeiras 48 horas.\n\nContrate plays e seguidores para perfil ou faixa no Spotify pelo catálogo SMM do Hanork. Informe o link oficial, escolha o pacote e pague com PIX ou Mercado Pago.\n\nPedido rastreável no privado. Ideal para singles, playlists comerciais e testes de audiência.",
+    "waBody": "Spotify no Hanork\n\nPlays e seguidores para artista.\n\nEntrega automática após pagamento confirmado.",
+    "image_file": "ssm_01.jpg",
+    "slot": 23
+  },
+  {
+    "id": "smm-launch-24",
+    "headline": "Kick e Twitch: viewers para live",
+    "tgBody": "Live com sala vazia afasta novos espectadores.\n\nImpulsione viewers simultâneos na Kick ou Twitch informando o link da transmissão. Catálogo curado, preço antes de pagar, entrega após confirmação.\n\nCombine com divulgação no Telegram e WhatsApp para maximizar presença no horário do evento.",
+    "waBody": "Kick/Twitch viewers\n\nImpulsione live pelo @hanork_bot.\n\nPIX, cartão e acompanhamento no PV.",
+    "image_file": "ssm_01.jpg",
+    "slot": 24
+  },
+  {
+    "id": "smm-launch-25",
+    "headline": "Pacotes combinados: Instagram + TikTok + Telegram",
+    "tgBody": "Campanha multicanal exige presença coerente em várias redes.\n\nMonte pedidos separados no Hanork para Instagram, TikTok, YouTube e membros Telegram — cada um com link, quantidade e pagamento independente, mas no mesmo bot.\n\nHistórico unificado, suporte /suporte e 25 textos de divulgação rotativos para promover o catálogo SMM nos grupos.",
+    "waBody": "SMM multicanal Hanork\n\nInstagram, TikTok, YouTube e Telegram no mesmo bot.\n\n25 textos de divulgação + PIX ou cartão.",
+    "image_file": "ssm_01.jpg",
+    "slot": 25
+  }
+]

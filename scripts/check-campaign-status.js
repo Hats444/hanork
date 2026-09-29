@@ -1,0 +1,20 @@
+'use strict';
+require('../src/config/env');
+const db = require('better-sqlite3')('/home/vendetta/.hanork/hanork.db');
+const { getLocalParts, getDueGroupSlots, getDuePvSlots, campaignTypeNow } = require('../src/services/campaign/campaignTimeWindows');
+const { isCampaignOrchestratorEnabled } = require('../src/config/campaignConfig');
+
+const now = new Date();
+const parts = getLocalParts(now);
+console.log('now_local:', `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}`);
+console.log('orchestrator:', isCampaignOrchestratorEnabled());
+console.log('window:', campaignTypeNow(now));
+console.log('due_groups:', getDueGroupSlots(now));
+console.log('due_pv:', getDuePvSlots(now));
+console.log('deliveries:', db.prepare('SELECT COUNT(*) c FROM campaign_deliveries').get().c);
+console.log('history:', db.prepare('SELECT COUNT(*) c FROM campaign_history').get().c);
+console.log('queue:', db.prepare('SELECT COUNT(*) c FROM campaign_queue WHERE status=\'pending\'').get().c);
+const recent = db.prepare('SELECT dest_type,dest_id,campaign_type,status,delivered_at FROM campaign_deliveries ORDER BY id DESC LIMIT 8').all();
+console.log('recent_deliveries:', JSON.stringify(recent, null, 2));
+const hist = db.prepare('SELECT slot_key,campaign_type,channel,source,finished_at FROM campaign_history ORDER BY id DESC LIMIT 5').all();
+console.log('recent_history:', JSON.stringify(hist, null, 2));

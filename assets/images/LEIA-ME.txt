@@ -1,0 +1,24 @@
+Imagens de telas do Hanork (Telegram bot)
+=========================================
+
+Coloque aqui as capas usadas nos painéis do bot (foto + legenda + botões).
+
+Arquivos esperados (JPG, PNG ou WebP):
+
+  home.jpg       — menu principal / catálogo SMM
+  instagram.jpg  — serviços Instagram
+  tiktok.jpg     — serviços TikTok
+  youtube.jpg    — serviços YouTube
+  telegram.jpg   — serviços Telegram
+  facebook.jpg   — serviços Facebook
+  discord.jpg    — serviços Discord
+  spotify.jpg    — serviços Spotify
+  wallet.jpg     — carteira / pagamentos
+  cashback.jpg   — cashback
+  affiliate.jpg  — afiliados
+  orders.jpg     — pedidos e notificações
+  support.jpg    — suporte e termos
+
+Se um arquivo não existir, o bot usa infos/menu*.jpg como fallback.
+
+Variável opcional: HANORK_ASSETS_IMAGES=/caminho/customizado

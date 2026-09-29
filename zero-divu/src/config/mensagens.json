@@ -1,0 +1,13 @@
+{
+  "modo": "catalogo-hanork",
+  "ordem": [
+    "hanork"
+  ],
+  "campanhas": {
+    "hanork": {
+      "imagem": "hanork",
+      "link": "https://t.me/hanork_bot?start=catalogo",
+      "variacoes": []
+    }
+  }
+}
